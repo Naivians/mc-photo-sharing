@@ -1,558 +1,860 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+<?php include "./partials/headers.php"; ?>
+<!--  -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvin & Cherry | Wedding Gallery</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
-    <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
-    <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
-</head>
+<body
+    class="bg-pearl text-ocean-900 font-sans antialiased overflow-x-hidden selection:bg-ocean-200 selection:text-ocean-900">
 
-<body>
-    <!-- Animated Background -->
-    <div class="bg-animation">
-        <div class="floating-circle circle-1"></div>
-        <div class="floating-circle circle-2"></div>
-        <div class="floating-circle circle-3"></div>
-    </div>
+    <?php include "./partials/loader.php"; ?>
 
-    <header>
-        <div class="wedding-date">October 03, 2026</div>
-        <h1>Joseph <span class="ampersand">&</span> Maria</h1>
-        <p class="subtitle">Help us capture every magical moment of our special day</p>
-    </header>
+    <?php include "./partials/nav.php"; ?>
+    <?php include "./partials/hero.php"; ?>
 
-    <main class="container">
-        <!-- Upload Section -->
-        <section class="upload-section">
-            <div class="upload-area" id="uploadArea">
-                <div class="upload-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
-                    </svg>
-                </div>
-                <div class="upload-text">
-                    <h3>Share Your Moments</h3>
-                    <p>Drag & drop photos and videos here, or click to browse</p>
-                </div>
-                <button class="upload-btn" id="uploadBtn">Select Files</button>
-                <input type="file" class="file-input" id="fileInput" multiple accept="image/*,video/*">
-                <div class="upload-progress" id="uploadProgress">
-                    <div class="progress-bar" id="progressBar">
-                        <h1>awdkjahjwkdhwad</h1>
+    <!-- The Wedding Party Section -->
+    <section id="party" class="py-24 px-6 lg:px-20 bg-pearl relative">
+
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-20 " data-aos="fade-up">
+                <span class="text-ocean-500 uppercase tracking-widest text-xs font-bold">The Wedding Party</span>
+                <h2 class="text-5xl md:text-6xl font-serif text-ocean-900 mt-2 mb-6">Best Man & Maid of Honor</h2>
+                <div class="w-24 h-1 bg-ocean-200 mx-auto"></div>
+            </div>
+
+            <!-- Grid Container -->
+            <div class="relative min-h-[700px] max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-items-center">
+                    <!-- Maid of Honor -->
+                    <div class="group relative overflow-hidden rounded-2xl cursor-pointer reveal w-full max-w-sm"
+                        data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                        <div class="aspect-[4/5] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
+                                alt="Maid of Honor"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
+                            <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Best Man</p>
+                            <h3 class="text-white text-3xl font-serif">Erwin Madera</h3>
+                        </div>
+                    </div>
+
+                    <!-- Maid of Honor -->
+                    <div class="group relative overflow-hidden rounded-2xl cursor-pointer reveal w-full max-w-sm"
+                        data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                        <div class="aspect-[4/5] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+                                alt="Best Man"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
+                            <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Maid of Honor</p>
+                            <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <button class="upload-btn" id="uploadBtnMobile">
-            <span>Upload</span>
-        </button>
-
-        <!-- Gallery Section -->
-        <section class="gallery-section">
-            <div class="section-header">
-                <h2 class="section-title" id="section-title">Wedding Gallery</h2>
-                <div class="filter-tabs">
-                    <button class="filter-tab active" data-filter="all">All</button>
-                    <button class="filter-tab" data-filter="photo">Photos</button>
-                    <button class="filter-tab" data-filter="video">Videos</button>
+            <!-- Toggle Switch -->
+            <div class="flex justify-center mb-16" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                <div class="bg-white p-1 rounded-full shadow-lg border border-ocean-100 inline-flex">
+                    <button id="btn-bridesmaids"
+                        class="px-8 py-3 rounded-full text-sm uppercase tracking-widest transition-all duration-300 bg-ocean-800 text-white shadow-md">
+                        Bridesmaids
+                    </button>
+                    <button id="btn-groomsmen"
+                        class="px-8 py-3 rounded-full text-sm uppercase tracking-widest transition-all duration-300 text-ocean-600 hover:text-ocean-900">
+                        Groomsmen
+                    </button>
                 </div>
             </div>
 
-            <div class="loading-spinner" id="loadingSpinner"></div>
-
-            <div class="empty-state" id="emptyState">
-                <svg class="empty-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
-                </svg>
-                <h3>No memories shared yet</h3>
-                <p>Be the first to upload a photo or video!</p>
+            <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                <h2 class="text-5xl md:text-6xl font-serif text-ocean-900 mt-2 mb-6">Bridesmaids & Groomsmen</h2>
+                <div class="w-24 h-1 bg-ocean-200 mx-auto"></div>
             </div>
 
-            <div class="gallery-grid" id="galleryGrid"></div>
-        </section>
-    </main>
+            <!-- Grid Container -->
+            <div class="relative min-h-[500px] md:min-h-[550px] lg:min-h-[600px]" >
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <div class="toast-icon">✓</div>
-        <span id="toastMessage">Upload successful!</span>
+                <!-- Bridesmaids Carousel -->
+                <div id="grid-bridesmaids" class="transition-all duration-500 opacity-100 absolute w-full top-0 left-0" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl md:text-3xl font-serif text-ocean-800 italic">Bride's Entourage</h3>
+                        <div class="w-16 h-0.5 bg-ocean-300 mx-auto mt-2"></div>
+                    </div>
+
+                    <!-- Carousel Container -->
+                    <div class="relative px-12 md:px-16">
+                        <!-- Navigation Buttons -->
+                        <button onclick="scrollBridesmaids(-1)"
+                            class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center text-ocean-800 transition-all hover:scale-110">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button onclick="scrollBridesmaids(1)"
+                            class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center text-ocean-800 transition-all hover:scale-110">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                        <!-- Carousel Track -->
+                        <div id="bridesmaids-track"
+                            class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth pb-4"
+                            style="scrollbar-width: none; -ms-overflow-style: none;">
+
+                            <!-- Maid of Honor -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+                                        alt="Maid of Honor"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Maid of Honor</p>
+                                    <h3 class="text-white text-2xl font-serif">Sarah Jenkins</h3>
+                                </div>
+                            </div>
+
+                            <!-- Bridesmaid 2 -->
+                            <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                                style="transition-delay: 50ms;">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
+                                        alt="Bridesmaid"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmaid</p>
+                                    <h3 class="text-white text-2xl font-serif">Emily Rose</h3>
+                                </div>
+                            </div>
+
+                            <!-- Bridesmaid 3 -->
+                            <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                                style="transition-delay: 100ms;">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
+                                        alt="Bridesmaid"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmaid</p>
+                                    <h3 class="text-white text-2xl font-serif">Jessica Lee</h3>
+                                </div>
+                            </div>
+
+                            <!-- Bridesmaid 4 -->
+                            <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                                style="transition-delay: 150ms;">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80"
+                                        alt="Bridesmaid"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmaid</p>
+                                    <h3 class="text-white text-2xl font-serif">Amanda Cole</h3>
+                                </div>
+                            </div>
+
+                            <!-- Bridesmaid 5 -->
+                            <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                                style="transition-delay: 200ms;">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80"
+                                        alt="Bridesmaid"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmaid</p>
+                                    <h3 class="text-white text-2xl font-serif">Sophia Chen</h3>
+                                </div>
+                            </div>
+
+                            <!-- Bridesmaid 6 -->
+                            <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                                style="transition-delay: 250ms;">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=800&q=80"
+                                        alt="Bridesmaid"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmaid</p>
+                                    <h3 class="text-white text-2xl font-serif">Olivia Martinez</h3>
+                                </div>
+                            </div>
+
+                            <!-- Bridesmaid 7 -->
+                            <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                                style="transition-delay: 300ms;">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=800&q=80"
+                                        alt="Bridesmaid"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmaid</p>
+                                    <h3 class="text-white text-2xl font-serif">Isabella Thompson</h3>
+                                </div>
+                            </div>
+
+                            <!-- Bridesmaid 8 -->
+                            <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                                style="transition-delay: 350ms;">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80"
+                                        alt="Bridesmaid"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmaid</p>
+                                    <h3 class="text-white text-2xl font-serif">Mia Anderson</h3>
+                                </div>
+                            </div>
+
+                            <!-- Bridesmaid 9 -->
+                            <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                                style="transition-delay: 400ms;">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80"
+                                        alt="Bridesmaid"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmaid</p>
+                                    <h3 class="text-white text-2xl font-serif">Charlotte Wilson</h3>
+                                </div>
+                            </div>
+
+                            <!-- Bridesmaid 10 -->
+                            <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                                style="transition-delay: 450ms;">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1485893086445-ed75865251e0?auto=format&fit=crop&w=800&q=80"
+                                        alt="Bridesmaid"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmaid</p>
+                                    <h3 class="text-white text-2xl font-serif">Ava Brown</h3>
+                                </div>
+                            </div>
+
+                            <!-- Bridesmaid 11 -->
+                            <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                                style="transition-delay: 500ms;">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=800&q=80"
+                                        alt="Bridesmaid"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmaid</p>
+                                    <h3 class="text-white text-2xl font-serif">Lily Davis</h3>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Dots Indicator -->
+                        <div class="flex justify-center gap-2 mt-4" id="bridesmaids-dots">
+                            <!-- Dots generated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Groomsmen Carousel (Hidden by default) -->
+                <div id="grid-groomsmen"
+                    class="transition-all duration-500 opacity-0 pointer-events-none absolute w-full top-0 left-0" >
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl md:text-3xl font-serif text-ocean-800 italic">Groom's Entourage</h3>
+                        <div class="w-16 h-0.5 bg-ocean-300 mx-auto mt-2"></div>
+                    </div>
+
+                    <!-- Carousel Container -->
+                    <div class="relative px-12 md:px-16">
+                        <!-- Navigation Buttons -->
+                        <button onclick="scrollGroomsmen(-1)"
+                            class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center text-ocean-800 transition-all hover:scale-110">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button onclick="scrollGroomsmen(1)"
+                            class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center text-ocean-800 transition-all hover:scale-110">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                        <!-- Carousel Track -->
+                        <div id="groomsmen-track"
+                            class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth pb-4"
+                            style="scrollbar-width: none; -ms-overflow-style: none;">
+
+                            <!-- Best Man -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
+                                        alt="Best Man"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Best Man</p>
+                                    <h3 class="text-white text-2xl font-serif">Michael Ross</h3>
+                                </div>
+                            </div>
+
+                            <!-- Groomsman 2 -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+                                        alt="Groomsman"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsman</p>
+                                    <h3 class="text-white text-2xl font-serif">David Kim</h3>
+                                </div>
+                            </div>
+
+                            <!-- Groomsman 3 -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+                                        alt="Groomsman"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsman</p>
+                                    <h3 class="text-white text-2xl font-serif">Chris Evans</h3>
+                                </div>
+                            </div>
+
+                            <!-- Groomsman 4 -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=800&q=80"
+                                        alt="Groomsman"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsman</p>
+                                    <h3 class="text-white text-2xl font-serif">Ryan Cole</h3>
+                                </div>
+                            </div>
+
+                            <!-- Groomsman 5 -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80"
+                                        alt="Groomsman"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsman</p>
+                                    <h3 class="text-white text-2xl font-serif">James Wilson</h3>
+                                </div>
+                            </div>
+
+                            <!-- Groomsman 6 -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+                                        alt="Groomsman"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsman</p>
+                                    <h3 class="text-white text-2xl font-serif">Daniel Lee</h3>
+                                </div>
+                            </div>
+
+                            <!-- Groomsman 7 -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=800&q=80"
+                                        alt="Groomsman"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsman</p>
+                                    <h3 class="text-white text-2xl font-serif">Matthew Taylor</h3>
+                                </div>
+                            </div>
+
+                            <!-- Groomsman 8 -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=800&q=80"
+                                        alt="Groomsman"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsman</p>
+                                    <h3 class="text-white text-2xl font-serif">Andrew Martinez</h3>
+                                </div>
+                            </div>
+
+                            <!-- Groomsman 9 -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
+                                        alt="Groomsman"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsman</p>
+                                    <h3 class="text-white text-2xl font-serif">Joshua Anderson</h3>
+                                </div>
+                            </div>
+
+                            <!-- Groomsman 10 -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+                                        alt="Groomsman"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsman</p>
+                                    <h3 class="text-white text-2xl font-serif">Brandon Thomas</h3>
+                                </div>
+                            </div>
+
+                            <!-- Groomsman 11 -->
+                            <div
+                                class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                                <div class="aspect-[3/4] overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=800&q=80"
+                                        alt="Groomsman"
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                    <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsman</p>
+                                    <h3 class="text-white text-2xl font-serif">Kevin Garcia</h3>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="flex justify-center gap-2 mt-4" id="groomsmen-dots">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal Sponsors Section -->
+    <section id="sponsors" class="py-24 bg-ocean-50 relative overflow-hidden">
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-20 -right-20 w-96 h-96 bg-ocean-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70">
+            </div>
+            <div
+                class="absolute top-40 -left-20 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-3xl opacity-70">
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-ocean-500 uppercase tracking-widest text-xs font-bold">Honored Guests</span>
+                <h2 class="text-5xl md:text-6xl font-serif text-ocean-900 mt-2 mb-6">Principal Sponsors</h2>
+                <p class="text-ocean-700 max-w-2xl mx-auto font-light">
+                    We are deeply grateful to our Ninongs and Ninangs for their guidance, wisdom, and support as we
+                    embark on this new journey together.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+                <!-- Ninongs Column -->
+                <div class="reveal">
+                    <h3 class="text-2xl font-serif text-ocean-800 mb-8 text-center border-b border-ocean-200 pb-4">
+                        Ninongs</h3>
+                    <ul class="space-y-6 text-center">
+                        <li class="group cursor-default">
+                            <span
+                                class="block text-xl text-ocean-900 font-medium group-hover:text-ocean-600 transition-colors">Mr.
+                                Robert Williams</span>
+                            <span class="text-sm text-ocean-500 uppercase tracking-wider">Family Friend</span>
+                        </li>
+                        <li class="group cursor-default">
+                            <span
+                                class="block text-xl text-ocean-900 font-medium group-hover:text-ocean-600 transition-colors">Dr.
+                                James Anderson</span>
+                            <span class="text-sm text-ocean-500 uppercase tracking-wider">Uncle of the Groom</span>
+                        </li>
+                        <li class="group cursor-default">
+                            <span
+                                class="block text-xl text-ocean-900 font-medium group-hover:text-ocean-600 transition-colors">Engr.
+                                Richard Martinez</span>
+                            <span class="text-sm text-ocean-500 uppercase tracking-wider">Godfather of the Bride</span>
+                        </li>
+                        <li class="group cursor-default">
+                            <span
+                                class="block text-xl text-ocean-900 font-medium group-hover:text-ocean-600 transition-colors">Atty.
+                                Michael Chen</span>
+                            <span class="text-sm text-ocean-500 uppercase tracking-wider">Family Friend</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ninangs Column -->
+                <div class="reveal" style="transition-delay: 200ms;">
+                    <h3 class="text-2xl font-serif text-ocean-800 mb-8 text-center border-b border-ocean-200 pb-4">
+                        Ninangs</h3>
+                    <ul class="space-y-6 text-center">
+                        <li class="group cursor-default">
+                            <span
+                                class="block text-xl text-ocean-900 font-medium group-hover:text-ocean-600 transition-colors">Mrs.
+                                Elizabeth Williams</span>
+                            <span class="text-sm text-ocean-500 uppercase tracking-wider">Family Friend</span>
+                        </li>
+                        <li class="group cursor-default">
+                            <span
+                                class="block text-xl text-ocean-900 font-medium group-hover:text-ocean-600 transition-colors">Dra.
+                                Susan Anderson</span>
+                            <span class="text-sm text-ocean-500 uppercase tracking-wider">Aunt of the Groom</span>
+                        </li>
+                        <li class="group cursor-default">
+                            <span
+                                class="block text-xl text-ocean-900 font-medium group-hover:text-ocean-600 transition-colors">Mrs.
+                                Maria Santos</span>
+                            <span class="text-sm text-ocean-500 uppercase tracking-wider">Godmother of the Bride</span>
+                        </li>
+                        <li class="group cursor-default">
+                            <span
+                                class="block text-xl text-ocean-900 font-medium group-hover:text-ocean-600 transition-colors">Mrs.
+                                Linda Chen</span>
+                            <span class="text-sm text-ocean-500 uppercase tracking-wider">Family Friend</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="py-24 px-6 relative bg-ocean-900 text-white overflow-hidden">
+        <!-- Abstract Shapes -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
+            <div class="absolute top-10 left-10 w-64 h-64 border-[40px] border-white rounded-full"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 border-[60px] border-white rounded-full"></div>
+        </div>
+
+        <div class="max-w-3xl mx-auto relative z-10">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-5xl md:text-6xl font-serif mb-4">Join Us</h2>
+                <p class="text-ocean-200 font-light">Please respond by May 1st, 2026</p>
+            </div>
+
+            <form id="rsvp-form" class="glass-dark p-8 md:p-12 rounded-3xl shadow-2xl reveal">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="relative">
+                        <input type="text" id="name" required
+                            class="peer w-full bg-transparent border-b border-ocean-400 py-2 text-white placeholder-transparent focus:outline-none focus:border-white transition-colors"
+                            placeholder="Name">
+                        <label for="name"
+                            class="absolute left-0 -top-3.5 text-ocean-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-ocean-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-white peer-focus:text-sm">Full
+                            Name</label>
+                    </div>
+                    <div class="relative">
+                        <input type="email" id="email" required
+                            class="peer w-full bg-transparent border-b border-ocean-400 py-2 text-white placeholder-transparent focus:outline-none focus:border-white transition-colors"
+                            placeholder="Email">
+                        <label for="email"
+                            class="absolute left-0 -top-3.5 text-ocean-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-ocean-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-white peer-focus:text-sm">Email
+                            Address</label>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <label class="block text-ocean-300 text-sm mb-3">Will you be attending?</label>
+                    <div class="flex space-x-6">
+                        <label class="flex items-center cursor-pointer group">
+                            <input type="radio" name="attendance" value="yes" class="hidden peer" checked>
+                            <div
+                                class="w-5 h-5 border-2 border-ocean-400 rounded-full flex items-center justify-center peer-checked:border-white peer-checked:bg-white transition-all">
+                                <div class="w-2 h-2 bg-ocean-900 rounded-full opacity-0 peer-checked:opacity-100"></div>
+                            </div>
+                            <span class="ml-2 text-ocean-200 group-hover:text-white transition-colors">Joyfully
+                                Accept</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer group">
+                            <input type="radio" name="attendance" value="no" class="hidden peer">
+                            <div
+                                class="w-5 h-5 border-2 border-ocean-400 rounded-full flex items-center justify-center peer-checked:border-white peer-checked:bg-white transition-all">
+                                <div class="w-2 h-2 bg-ocean-900 rounded-full opacity-0 peer-checked:opacity-100"></div>
+                            </div>
+                            <span class="ml-2 text-ocean-200 group-hover:text-white transition-colors">Regretfully
+                                Decline</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-8 relative">
+                    <input type="number" id="guests" min="1" max="5"
+                        class="peer w-full bg-transparent border-b border-ocean-400 py-2 text-white placeholder-transparent focus:outline-none focus:border-white transition-colors"
+                        placeholder="Number of Guests">
+                    <label for="guests"
+                        class="absolute left-0 -top-3.5 text-ocean-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-ocean-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-white peer-focus:text-sm">Number
+                        of Guests (including yourself)</label>
+                </div>
+
+                <div class="mb-8 relative">
+                    <textarea id="message" rows="3"
+                        class="peer w-full bg-transparent border-b border-ocean-400 py-2 text-white placeholder-transparent focus:outline-none focus:border-white transition-colors resize-none"
+                        placeholder="Dietary Restrictions"></textarea>
+                    <label for="message"
+                        class="absolute left-0 -top-3.5 text-ocean-300 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-ocean-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-white peer-focus:text-sm">Dietary
+                        Restrictions / Message</label>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-white text-ocean-900 font-bold py-4 rounded-full hover:bg-ocean-100 transform hover:scale-[1.02] transition-all duration-300 shadow-lg flex justify-center items-center group">
+                    <span>Send RSVP</span>
+                    <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ocean-950 text-ocean-400 py-12 text-center">
+        <div class="font-serif text-3xl text-white mb-4">E & J</div>
+        <p class="text-sm uppercase tracking-widest mb-8">June 15th, 2026 • Santorini, Greece</p>
+        <div class="flex justify-center space-x-6 mb-8">
+            <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+            <a href="#" class="hover:text-white transition-colors"><i class="fab fa-pinterest text-xl"></i></a>
+            <a href="#" class="hover:text-white transition-colors"><i class="fas fa-envelope text-xl"></i></a>
+        </div>
+        <p class="text-xs opacity-50">&copy; 2026 Elena & Julian. Designed with love.</p>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center px-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="modal-backdrop"></div>
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full relative z-10 transform scale-90 opacity-0 transition-all duration-300"
+            id="modal-content">
+            <div class="text-center">
+                <div
+                    class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-500 text-2xl">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h3 class="text-2xl font-serif text-ocean-900 mb-2">Thank You!</h3>
+                <p class="text-ocean-600 mb-6">Your RSVP has been received. We can't wait to celebrate with you.</p>
+                <button id="close-modal"
+                    class="bg-ocean-800 text-white px-6 py-2 rounded-full hover:bg-ocean-700 transition-colors">Close</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <!-- <p style="position: absolute; top:10px; font-size: 0.9rem; color: white;">Click anywhere to close</p> -->
-        <div class="button-group">
-            <button class="" id="downloadBtn" onclick="downloadPhoto()">Download <i class="bx bx-arrow-to-bottom"> </i></button>
-        </div>
-        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
-        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
-        <div class="lightbox-content">
-            <button class="lightbox-close" id="lightboxClose">&times;</button>
-            <div id="lightboxMedia"></div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./assets/main.js"></script>
 
     <script>
-        const SCRIPT_URL = "uploads.php";
-        const GALLERY_URL = "gallery.php";
 
-        const uploadArea = document.getElementById('uploadArea');
-        const fileInput = document.getElementById('fileInput');
-        const uploadBtn = document.getElementById('uploadBtn');
-        const sectionTitle = document.getElementById('section-title');
-        const uploadBtnMobile = document.getElementById('uploadBtnMobile');
-        const galleryGrid = document.getElementById('galleryGrid');
-        const toast = document.getElementById('toast');
-        const toastMessage = document.getElementById('toastMessage');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const lightboxMedia = document.getElementById('lightboxMedia');
-        const lightboxPrev = document.getElementById('lightboxPrev');
-        const lightboxNext = document.getElementById('lightboxNext');
-        const filterTabs = document.querySelectorAll('.filter-tab');
-        const uploadProgress = document.getElementById('uploadProgress');
-        const progressBar = document.getElementById('progressBar');
-
-        let currentFilter = 'all';
-        let currentLightboxIndex = 0;
-        let galleryItems = [];
-
-        document.getElementById("lightboxNext").onclick = showNext;
-        document.getElementById("lightboxPrev").onclick = showPrev;
-
-        uploadBtn.addEventListener('click', () => fileInput.click());
-        uploadBtnMobile.addEventListener('click', () => fileInput.click());
-
-        window.addEventListener("scroll", function() {
-
-            if (window.scrollY > 500) {
-                uploadBtnMobile.classList.add("show");
-                sectionTitle.style.display = "none";
-            } else {
-                uploadBtnMobile.classList.remove("show");
-                sectionTitle.style.display = "block";
-            }
-        });
-        window.addEventListener("scroll", function() {
-            if (window.scrollY > 700) {
-                sectionTitle.style.display = "none";
-            } else {
-                sectionTitle.style.display = "block";
-            }
-        });
-
-        uploadArea.addEventListener('click', (e) => {
-            if (e.target !== uploadBtn) fileInput.click();
-        });
-
-        fileInput.addEventListener('change', e => {
-            processFiles(Array.from(e.target.files));
-        });
-
-        uploadArea.addEventListener('dragover', e => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
-
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
-        });
-
-        uploadArea.addEventListener('drop', e => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
-            processFiles(Array.from(e.dataTransfer.files));
-        });
-
-        function sharePhoto() {
-
-            const file = lightbox.dataset.id;
-
-            const url = window.location.origin + "/uploads/" + encodeURIComponent(file);
-
-            if (navigator.share) {
-
-                navigator.share({
-                    title: "Wedding Photo",
-                    text: "Check out this photo from the wedding!",
-                    url: url
-                }).catch(err => console.log(err));
-
-            } else {
-
-                // fallback (copy link)
-                navigator.clipboard.writeText(url);
-                alert("Link copied to clipboard!");
-
-            }
-
+        function scrollBridesmaids(direction) {
+            const track = document.getElementById('bridesmaids-track');
+            const cardWidth = track.querySelector('div').offsetWidth + 24; // card width + gap
+            track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+            updateDots('bridesmaids');
         }
 
-        function downloadPhoto() {
-
-            const file = lightbox.dataset.id;
-
-            window.location.href = "download.php?file=" + encodeURIComponent(file);
-
+        function scrollGroomsmen(direction) {
+            const track = document.getElementById('groomsmen-track');
+            const cardWidth = track.querySelector('div').offsetWidth + 24;
+            track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+            updateDots('groomsmen');
         }
 
-        async function processFiles(files) {
+        // Generate dots
+        function generateDots(containerId, trackId) {
+            const track = document.getElementById(trackId);
+            const container = document.getElementById(containerId);
+            const cards = track.querySelectorAll('.snap-center');
+            const visibleCards = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+            const dotCount = Math.ceil(cards.length / visibleCards);
 
-            const validFiles = files.filter(f =>
-                f.type.startsWith('image/') || f.type.startsWith('video/')
-            );
-
-            if (validFiles.length === 0) {
-                showToast("Only images or videos allowed");
-                return;
+            container.innerHTML = '';
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('button');
+                dot.className = `w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-ocean-600 w-6' : 'bg-ocean-300'}`;
+                dot.onclick = () => {
+                    const cardWidth = track.querySelector('div').offsetWidth + 24;
+                    track.scrollTo({ left: i * cardWidth * visibleCards, behavior: 'smooth' });
+                };
+                container.appendChild(dot);
             }
+        }
 
-            uploadProgress.classList.add("show");
+        // Update dots on scroll
+        function updateDots(type) {
+            const track = document.getElementById(`${type}-track`);
+            const container = document.getElementById(`${type}-dots`);
+            const dots = container.querySelectorAll('button');
+            const scrollPos = track.scrollLeft;
+            const cardWidth = track.querySelector('div').offsetWidth + 24;
+            const activeIndex = Math.round(scrollPos / cardWidth);
 
-            for (let i = 0; i < validFiles.length; i++) {
+            dots.forEach((dot, i) => {
+                dot.className = `w-2 h-2 rounded-full transition-all ${i === activeIndex ? 'bg-ocean-600 w-6' : 'bg-ocean-300'}`;
+            });
+        }
 
-                progressBar.style.width = ((i + 1) / validFiles.length) * 100 + "%";
+        // Initialize dots
+        window.addEventListener('load', () => {
+            generateDots('bridesmaids-dots', 'bridesmaids-track');
+            generateDots('groomsmen-dots', 'groomsmen-track');
+        });
 
-                const optimized = await compressImage(validFiles[i]);
-                await uploadFile(optimized);
+        window.addEventListener('resize', () => {
+            generateDots('bridesmaids-dots', 'bridesmaids-track');
+            generateDots('groomsmen-dots', 'groomsmen-track');
+        });
 
+        // Update dots on scroll
+        document.getElementById('bridesmaids-track').addEventListener('scroll', () => updateDots('bridesmaids'));
+        document.getElementById('groomsmen-track').addEventListener('scroll', () => updateDots('groomsmen'));
+
+        // Tab Switching (Bridesmaids / Groomsmen)
+        const btnBridesmaids = document.getElementById('btn-bridesmaids');
+        const btnGroomsmen = document.getElementById('btn-groomsmen');
+        const gridBridesmaids = document.getElementById('grid-bridesmaids');
+        const gridGroomsmen = document.getElementById('grid-groomsmen');
+
+        function switchTab(tab) {
+
+            if (tab === 'bridesmaids') {
+                // Style Buttons
+                btnBridesmaids.classList.add('bg-ocean-800', 'text-white', 'shadow-md');
+                btnBridesmaids.classList.remove('text-ocean-600', 'hover:text-ocean-900');
+                btnGroomsmen.classList.remove('bg-ocean-800', 'text-white', 'shadow-md');
+                btnGroomsmen.classList.add('text-ocean-600', 'hover:text-ocean-900');
+
+                // Show/Hide Grids
+                gridBridesmaids.style.display = "block"
+                gridGroomsmen.classList.add('opacity-0', 'pointer-events-none');
+            } else {
+
+                // Style Buttons
+                btnGroomsmen.classList.add('bg-ocean-800', 'text-white', 'shadow-md');
+                btnGroomsmen.classList.remove('text-ocean-600', 'hover:text-ocean-900');
+                btnBridesmaids.classList.remove('bg-ocean-800', 'text-white', 'shadow-md');
+                btnBridesmaids.classList.add('text-ocean-600', 'hover:text-ocean-900');
+
+                // Show/Hide Grids
+                gridGroomsmen.classList.remove('opacity-0', 'pointer-events-none');
+                // gridBridesmaids.classList.add('opacity-0', 'pointer-events-none');
+                gridBridesmaids.style.display = "none"
             }
+        }
+
+        btnBridesmaids.addEventListener('click', () => switchTab('bridesmaids'));
+        btnGroomsmen.addEventListener('click', () => switchTab('groomsmen'));
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // RSVP Form Handling
+        const form = document.getElementById('rsvp-form');
+        const modal = document.getElementById('success-modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModal = document.getElementById('close-modal');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate API call
+            const btn = form.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
 
             setTimeout(() => {
-                uploadProgress.classList.remove("show");
-                progressBar.style.width = "0%";
-                showToast("Upload complete");
-            }, 500);
-
-            loadGallery();
-        }
-
-        async function compressImage(file) {
-
-            if (!file.type.startsWith("image/")) return file;
-
-            return new Promise(resolve => {
-
-                const img = new Image();
-                const reader = new FileReader();
-
-                reader.onload = e => {
-                    img.src = e.target.result;
-                };
-
-                img.onload = () => {
-
-                    const canvas = document.createElement("canvas");
-
-                    const maxWidth = 1600;
-
-                    let width = img.width;
-                    let height = img.height;
-
-                    if (width > maxWidth) {
-                        height = height * (maxWidth / width);
-                        width = maxWidth;
-                    }
-
-                    canvas.width = width;
-                    canvas.height = height;
-
-                    const ctx = canvas.getContext("2d");
-                    ctx.drawImage(img, 0, 0, width, height);
-
-                    canvas.toBlob(blob => {
-                        resolve(new File([blob], file.name, {
-                            type: "image/jpeg"
-                        }));
-                    }, "image/jpeg", 0.8);
-
-                };
-
-                reader.readAsDataURL(file);
-
-            });
-
-        }
-
-        function handleFiles(files) {
-
-            [...files].forEach(file => uploadFile(file));
-
-        }
-
-        function uploadFile(file) {
-
-            const formData = new FormData();
-            formData.append("photo", file);
-
-            uploadProgress.style.display = "block";
-            $.ajax({
-                url: "uploads.php",
-                type: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
-
-                xhr: function() {
-
-                    let xhr = new window.XMLHttpRequest();
-
-                    xhr.upload.addEventListener("progress", function(e) {
-
-                        if (e.lengthComputable) {
-
-                            const percent = (e.loaded / e.total) * 100;
-                            progressBar.style.width = percent + "%";
-
-                        }
-
-                    });
-
-                    return xhr;
-                },
-
-                success: function(res) {
-
-                    console.log(res);
-
-                    progressBar.style.width = "100%";
-
-                    setTimeout(() => {
-                        uploadProgress.style.display = "none";
-                        progressBar.style.width = "0%";
-                    }, 800);
-
-                    loadGallery();
-                },
-
-                error: function() {
-                    alert("Upload failed");
-                }
-
-            });
-
-        }
-
-        async function loadGallery() {
-
-            galleryGrid.innerHTML = "";
-            document.getElementById("loadingSpinner").style.display = "block";
-
-            try {
-
-                const res = await fetch("gallery.php");
-                const files = await res.json();
-
-
-                document.getElementById("loadingSpinner").style.display = "none";
-
-                if (files.length === 0) {
-
-                    document.getElementById("emptyState").classList.add("show");
-                    return;
-
-                }
-
-                document.getElementById("emptyState").classList.remove("show");
-
-                files.reverse().forEach(file => {
-
-                    const item = document.createElement("div");
-                    item.className = "gallery-item";
-                    item.dataset.id = file.id;
-
-                    const url = file.url;
-                    const isVideo = file.type.startsWith("video/");
-                    if (isVideo) {
-
-                        item.dataset.type = "video";
-                        item.dataset.video = "true";
-                        item.dataset.src = url;
-
-                        item.innerHTML = `
-                        <video src="${url}" muted></video>
-                        <div class="play-icon">
-                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                        `;
-
-                    } else {
-
-                        item.dataset.type = "photo";
-                        item.innerHTML = `<img src="${url}">`;
-
-                    }
-
-                    galleryGrid.appendChild(item);
-
-                });
-
-                updateGalleryItems();
-                applyFilter(currentFilter);
-
-            } catch (err) {
-
-                showToast("Gallery load failed");
-
-            }
-
-        }
-
-        filterTabs.forEach(tab => {
-
-            tab.addEventListener("click", () => {
-
-                filterTabs.forEach(t => t.classList.remove("active"));
-
-                tab.classList.add("active");
-
-                currentFilter = tab.dataset.filter;
-
-                applyFilter(currentFilter);
-
-            });
-
+                // Show Modal
+                modal.classList.remove('hidden');
+                // Trigger reflow
+                void modal.offsetWidth;
+                modalContent.classList.remove('scale-90', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+
+                // Reset Form
+                form.reset();
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 1500);
         });
 
-        function applyFilter(filter) {
-
-            const items = document.querySelectorAll(".gallery-item");
-
-            items.forEach(item => {
-
-                if (filter === "all" || item.dataset.type === filter) {
-
-                    item.style.display = "block";
-
-                } else {
-
-                    item.style.display = "none";
-
-                }
-
-            });
-
-        }
-
-        function updateGalleryItems() {
-
-            galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
-
-            galleryItems.forEach((item, index) => {
-                item.onclick = () => openLightbox(index);
-            });
-
-        }
-
-        function openLightbox(index) {
-
-            currentLightboxIndex = index;
-            const item = galleryItems[index];
-            const dbid = item.dataset.id;
-
-            console.log("Opening lightbox for item with DB ID:", dbid);
-
-            lightbox.dataset.id = dbid;
-
-            const isVideo = item.dataset.video === "true";
-            const src = item.dataset.src || item.querySelector("img").src;
-
-            lightboxMedia.innerHTML = "";
-
-            if (isVideo) {
-
-                const video = document.createElement("video");
-                video.src = src;
-                video.controls = true;
-                video.autoplay = true;
-
-                lightboxMedia.appendChild(video);
-
-            } else {
-
-                const img = document.createElement("img");
-                img.src = src;
-
-                lightboxMedia.appendChild(img);
-
-            }
-
-            lightbox.classList.add("active");
-            document.body.style.overflow = "hidden";
-
-        }
-
-        function closeLightbox() {
-
-            lightbox.classList.remove("active");
-            document.body.style.overflow = "";
-            lightboxMedia.innerHTML = "";
-
-        }
-
-        lightboxClose.addEventListener("click", closeLightbox);
-
-        lightbox.addEventListener("click", e => {
-            if (e.target === lightbox) closeLightbox();
-        });
-
-        function showToast(message) {
-
-            toastMessage.textContent = message;
-
-            toast.classList.add("show");
-
+        function hideModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-90', 'opacity-0');
             setTimeout(() => {
-
-                toast.classList.remove("show");
-
-            }, 3000);
-
+                modal.classList.add('hidden');
+            }, 300);
         }
 
+        closeModal.addEventListener('click', hideModal);
+        modalBackdrop.addEventListener('click', hideModal);
 
-
-        function showNext() {
-
-            currentLightboxIndex++;
-
-            if (currentLightboxIndex >= galleryItems.length) {
-                currentLightboxIndex = 0;
+        // Parallax Effect for Hero Image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const heroBg = document.getElementById('hero-bg');
+            if (scrolled < window.innerHeight) {
+                heroBg.style.transform = `scale(1.1) translateY(${scrolled * 0.5}px)`;
             }
+        });
 
-            openLightbox(currentLightboxIndex);
-
-        }
-
-        function showPrev() {
-
-            currentLightboxIndex--;
-
-            if (currentLightboxIndex < 0) {
-                currentLightboxIndex = galleryItems.length - 1;
-            }
-
-            openLightbox(currentLightboxIndex);
-
-        }
-
-        document.addEventListener("DOMContentLoaded", loadGallery);
     </script>
-
 </body>
 
 </html>

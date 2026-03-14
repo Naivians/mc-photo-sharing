@@ -4,6 +4,52 @@
   box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'WeddingScript';
+    src: url('./fonts/PerfectoCalligraphy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.wedding-font{
+    font-family: 'WeddingScript', cursive;
+    font-size: 80px;
+}
+
+.hero-content{
+  position: absolute;
+  bottom: 200px;
+  width: 100%;
+  text-align: center;
+}
+
+.hero-content h1{
+  font-size: 3rem;
+}
+
+
+/* Loader */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #f0f9ff;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease-out;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 :root {
   --deep-blue: #1e3a5f;
   --royal-blue: #2c5282;
@@ -598,10 +644,16 @@ h1 {
   z-index: 1000;
 }
 
+
+
 /* Responsive */
 @media (max-width: 768px) {
   header {
     padding: 3rem 1.5rem 2rem;
+  }
+
+  .reveal{
+    display: none !important;
   }
 
   #uploadBtnMobile {
@@ -615,7 +667,6 @@ h1 {
     opacity: 1;
     pointer-events: auto;
   }
-  
 
   .section-header {
     flex-direction: column !important;
