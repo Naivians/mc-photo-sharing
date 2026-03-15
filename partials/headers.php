@@ -144,14 +144,5 @@
             transform: translateY(0);
             margin-top: 10px;
         }
-
-        #home::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.35);
-        }
-
-        /* Responsive */
     </style>
 </head>

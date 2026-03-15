@@ -4,28 +4,307 @@
   box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'WeddingScript';
-    src: url('./fonts/PerfectoCalligraphy.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-.wedding-font{
-    font-family: 'WeddingScript', cursive;
-    font-size: 80px;
+:root {
+  --deep-blue: #1e3a5f;
+  --royal-blue: #2c5282;
+  --sky-blue: #4299e1;
+  --light-blue: #bee3f8;
+  --pale-blue: #ebf8ff;
+  --white: #ffffff;
+  --cream: #f7fafc;
+  --shadow: rgba(30, 58, 95, 0.1);
 }
 
-.hero-content{
+body {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 50%, #f5f9ff 100%);
+  color: var(--deep-blue);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "WeddingScript";
+  src: url("./fonts/PerfectoCalligraphy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* timeline */
+.timeline {
+  position: relative;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #071c2f, #0c2e4d, #154a7d);
+  font-family: "Poppins", sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+/* floating glow */
+
+.timeline::before {
+  content: "";
   position: absolute;
-  bottom: 200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #4ab3ff55, transparent 70%);
+  top: -200px;
+  left: -200px;
+  animation: floatGlow 10s infinite alternate ease-in-out;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  /* background: radial-gradient(circle, #1f7fff44, transparent 70%); */
+  bottom: -200px;
+  right: -200px;
+  animation: floatGlow 12s infinite alternate ease-in-out;
+}
+
+@keyframes floatGlow {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(80px);
+  }
+}
+
+/* PLAY SCREEN */
+
+.timeline-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
+  padding: 50px;
+}
+
+.play-btn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+  color: white;
+  background: linear-gradient(135deg, #1c7ed6, #4dabf7);
+  box-shadow: 0 0 40px rgba(0, 150, 255, 0.6);
+  transition: 0.4s;
+  animation: pulse 2s infinite;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 60px rgba(0, 150, 255, 1);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 140, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(0, 140, 255, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 140, 255, 0.4);
+  }
+}
+
+.start-text {
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: #cce6ff;
+}
+
+/* timeline container */
+
+.timeline-container {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+  display: none;
+}
+
+/* center line */
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(#4dabf7, #1c7ed6);
+  transform: translateX(-50%);
+}
+
+/* items */
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 40px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+/* card */
+
+.timeline-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: 0.4s;
+}
+
+.timeline-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.timeline-date {
+  font-size: 14px;
+  color: #7fc8ff;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.timeline-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #cce9ff;
+}
+
+.timeline-desc {
+  font-size: 15px;
+  color: #d8ecff;
+  line-height: 1.6;
+}
+
+/* dots */
+
+.timeline-dot {
+  position: absolute;
+  top: 40px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background: #4dabf7;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #4dabf7;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -10px;
+}
+/* countdown */
+.countdown {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+#clock-section p {
+  font-size: 3rem;
+}
+
+.time-box {
+  /* background: rgba(0, 0, 0, 0.25); */
+  padding: 10px 25px;
+  border-radius: 12px;
+  width: 100px;
+  /* transition: 0.3s; */
+  text-align: center;
+  border: 1px solid #000;
+}
+
+/* .time-box:hover {
+  transform: translateY(-6px);
+  background: rgba(0, 0, 0, 0.35);
+} */
+
+.number {
+  font-size: 40px;
+  font-weight: 600;
+
+  /* animation: pulse 2s infinite; */
+}
+
+/* @keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+.label {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+.wedding-font {
+  font-family: "WeddingScript", cursive;
+  font-size: 80px;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 80px;
   width: 100%;
   text-align: center;
 }
 
-.hero-content h1{
-  font-size: 3rem;
+.hero-content h1 {
+  font-size: 7rem !important;
 }
 
+#weddingof,
+#marrydate {
+  position: relative;
+  font-size: 1.5rem;
+}
+
+#weddingof,
+#marrydate {
+  bottom: -20px;
+}
+
+#marrydate {
+  bottom: 10px;
+}
 
 /* Loader */
 #loader {
@@ -48,26 +327,6 @@
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}
-
-:root {
-  --deep-blue: #1e3a5f;
-  --royal-blue: #2c5282;
-  --sky-blue: #4299e1;
-  --light-blue: #bee3f8;
-  --pale-blue: #ebf8ff;
-  --white: #ffffff;
-  --cream: #f7fafc;
-  --shadow: rgba(30, 58, 95, 0.1);
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 50%, #f5f9ff 100%);
-  color: var(--deep-blue);
-  line-height: 1.6;
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 
 /* download and share buttons */
@@ -644,16 +903,46 @@ h1 {
   z-index: 1000;
 }
 
-
-
 /* Responsive */
 @media (max-width: 768px) {
+  .timeline-container::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    text-align: left;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-dot {
+    left: 10px !important;
+  }
+
+  #weddingof,
+  #marrydate {
+    position: relative;
+    font-size: 1rem;
+  }
+
+  #weddingof,
+  #marrydate {
+    bottom: 0px;
+  }
+
+  #marrydate {
+    bottom: 0px;
+  }
+
   header {
     padding: 3rem 1.5rem 2rem;
   }
-
-  .reveal{
-    display: none !important;
+  .hero-content h1 {
+    font-size: 3rem !important;
   }
 
   #uploadBtnMobile {

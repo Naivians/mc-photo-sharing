@@ -10,6 +10,44 @@
 
     <?php include "./partials/nav.php"; ?>
     <?php include "./partials/hero.php"; ?>
+    <?php include "./partials/timeline.php"; ?>
+
+
+
+    <section class="py-24 px-6 lg:px-20 bg-white relative" id="clock-section">
+        <center>
+            <img src="./assets/img/clock.gif" alt="" width="200px" height="auto" data-aos="fade-up" data-aos-delay="50"
+                data-aos-duration="1000" data-aos-easing="ease-in-out">
+        </center>
+        <div class="countdown text-center" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
+            data-aos-easing="ease-in-out">
+            <div class="time-box">
+                <div id="days" class="number text-ocean-950 font-serif">00</div>
+                <div class="label text-ocean-950">Days</div>
+            </div>
+
+            <div class="time-box">
+                <div id="hours" class="number text-ocean-950 font-serif">00</div>
+                <div class="label text-ocean-950">Hours</div>
+            </div>
+
+            <div class="time-box">
+                <div id="minutes" class="number text-ocean-950 font-serif">00</div>
+                <div class="label text-ocean-950">Minutes</div>
+            </div>
+
+            <div class="time-box">
+                <div id="seconds" class="number text-ocean-950 font-serif">00</div>
+                <center>
+                    <div class="label text-ocean-950">Seconds</div>
+                </center>
+            </div>
+        </div>
+
+        <p class="wedding-font text-center" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
+            data-aos-easing="ease-in-out">Before we say I do</p>
+    </section>
+
 
     <!-- The Wedding Party Section -->
     <section id="party" class="py-24 px-6 lg:px-20 bg-pearl relative">
@@ -58,7 +96,8 @@
             </div>
 
             <!-- Toggle Switch -->
-            <div class="flex justify-center mb-16" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+            <div class="flex justify-center mb-16" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
+                data-aos-easing="ease-in-out">
                 <div class="bg-white p-1 rounded-full shadow-lg border border-ocean-100 inline-flex">
                     <button id="btn-bridesmaids"
                         class="px-8 py-3 rounded-full text-sm uppercase tracking-widest transition-all duration-300 bg-ocean-800 text-white shadow-md">
@@ -71,16 +110,18 @@
                 </div>
             </div>
 
-            <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+            <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
+                data-aos-easing="ease-in-out">
                 <h2 class="text-5xl md:text-6xl font-serif text-ocean-900 mt-2 mb-6">Bridesmaids & Groomsmen</h2>
                 <div class="w-24 h-1 bg-ocean-200 mx-auto"></div>
             </div>
 
             <!-- Grid Container -->
-            <div class="relative min-h-[500px] md:min-h-[550px] lg:min-h-[600px]" >
+            <div class="relative min-h-[500px] md:min-h-[550px] lg:min-h-[600px]">
 
                 <!-- Bridesmaids Carousel -->
-                <div id="grid-bridesmaids" class="transition-all duration-500 opacity-100 absolute w-full top-0 left-0" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                <div id="grid-bridesmaids" class="transition-all duration-500 opacity-100 absolute w-full top-0 left-0"
+                    data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <div class="text-center mb-8">
                         <h3 class="text-2xl md:text-3xl font-serif text-ocean-800 italic">Bride's Entourage</h3>
                         <div class="w-16 h-0.5 bg-ocean-300 mx-auto mt-2"></div>
@@ -279,7 +320,7 @@
 
                 <!-- Groomsmen Carousel (Hidden by default) -->
                 <div id="grid-groomsmen"
-                    class="transition-all duration-500 opacity-0 pointer-events-none absolute w-full top-0 left-0" >
+                    class="transition-all duration-500 opacity-0 pointer-events-none absolute w-full top-0 left-0">
                     <div class="text-center mb-8">
                         <h3 class="text-2xl md:text-3xl font-serif text-ocean-800 italic">Groom's Entourage</h3>
                         <div class="w-16 h-0.5 bg-ocean-300 mx-auto mt-2"></div>
@@ -685,6 +726,55 @@
     <script src="./assets/main.js"></script>
 
     <script>
+
+        // time line
+        const playBtn = document.getElementById("playTimeline")
+        const timeline = document.getElementById("timelineContent")
+        const items = document.querySelectorAll(".timeline-item")
+        const song = document.getElementById("weddingSong")
+
+        playBtn.addEventListener("click", () => {
+
+            song.play()
+
+            document.querySelector(".timeline-start").style.display = "none"
+            timeline.style.display = "block"
+
+            setTimeout(() => {
+                items.forEach((item, i) => {
+                    setTimeout(() => {
+                        item.classList.add("show")
+                    }, i * 400)
+                })
+            }, 200)
+
+        })
+
+        const weddingDate = new Date("May 09, 2026 00:00:00").getTime();
+
+        function updateCountdown() {
+
+            const now = new Date().getTime();
+            const gap = weddingDate - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const d = Math.floor(gap / day);
+            const h = Math.floor((gap % day) / hour);
+            const m = Math.floor((gap % hour) / minute);
+            const s = Math.floor((gap % minute) / second);
+
+            document.getElementById("days").innerText = d;
+            document.getElementById("hours").innerText = h;
+            document.getElementById("minutes").innerText = m;
+            document.getElementById("seconds").innerText = s;
+
+        }
+
+        setInterval(updateCountdown, 1000);
 
         function scrollBridesmaids(direction) {
             const track = document.getElementById('bridesmaids-track');
