@@ -16,10 +16,10 @@
 
     <section class="py-24 px-6 lg:px-20 bg-white relative" id="clock-section">
         <center>
-            <img src="./assets/img/clock.gif" alt="" width="200px" height="auto" data-aos="fade-up" data-aos-delay="50"
+            <img src="./assets/img/clock.gif" alt="" width="200px" height="auto" data-aos="fade-up" data-aos-delay="25"
                 data-aos-duration="1000" data-aos-easing="ease-in-out">
         </center>
-        <div class="countdown text-center" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
+        <div class="countdown text-center" data-aos="fade-up" data-aos-delay="25" data-aos-duration="1000"
             data-aos-easing="ease-in-out">
             <div class="time-box">
                 <div id="days" class="number text-ocean-950 font-serif">00</div>
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <p class="wedding-font text-center" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
+        <p class="wedding-font text-center" data-aos="fade-up" data-aos-delay="25" data-aos-duration="1000"
             data-aos-easing="ease-in-out">Before we say I do</p>
     </section>
 
@@ -735,10 +735,10 @@
 
         playBtn.addEventListener("click", () => {
 
-            song.play()
+            song.play().catch(() => { })
 
-            document.querySelector(".timeline-start").style.display = "none"
-            timeline.style.display = "block"
+            // document.querySelector(".timeline-start").style.display = "none"
+            // timeline.style.display = "block"
 
             setTimeout(() => {
                 items.forEach((item, i) => {

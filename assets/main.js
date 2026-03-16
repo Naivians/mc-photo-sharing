@@ -10,4 +10,4 @@ window.addEventListener("load", () => {
 });
 
 AOS.init();
-
+AOS.refresh();
