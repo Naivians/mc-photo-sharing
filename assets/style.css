@@ -143,6 +143,25 @@ body {
 
 /* items */
 
+.timelineBackround {
+  width: 100%;
+  background-image: url("../timeline_pic.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.timelineBackround {
+  position: relative;
+}
+
+.timelineBackround::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1); /* dark overlay */
+}
+
 .timeline-item {
   position: relative;
   width: 50%;

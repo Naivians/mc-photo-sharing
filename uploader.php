@@ -59,10 +59,8 @@
 
 
     <?php include "./partials/nav.php"; ?>
-    <?php include "./partials/hero.php"; ?>
 
     <main class="container pt-12">
-        <!-- Upload Section -->
         <section class="upload-section">
             <div class="upload-area" id="uploadArea">
                 <div class="upload-icon">

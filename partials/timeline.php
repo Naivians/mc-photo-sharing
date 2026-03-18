@@ -1,21 +1,22 @@
-<section class="py-24 px-6 bg-ocean-950">
+<section class="py-24 px-6 bg-ocean-950 timelineBackround">
     <div class="timeline-start">
-    
-        <h2 class="start-text wedding-font text-white " data-aos="fade-up" data-aos-delay="25"
-                data-aos-duration="1000" data-aos-easing="ease-in-out">Our Love Story</h2>
-    
-        <button class="play-btn" id="playTimeline" data-aos="fade-up" data-aos-delay="25"
-                data-aos-duration="1000" data-aos-easing="ease-in-out">
-            ▶
+
+        <h2 class="start-text wedding-font text-white " data-aos="fade-up" data-aos-delay="25" data-aos-duration="1000"
+            data-aos-easing="ease-in-out">This song tells our love story</h2>
+
+        <button class="play-btn" id="playTimeline" data-aos="fade-up" data-aos-delay="25" data-aos-duration="1000"
+            data-aos-easing="ease-in-out">
+            <i class='bx bx-play'></i>
         </button>
-    
+
     </div>
-    
-    <audio id="weddingSong" src="wedsong.mp3" preload="auto"></audio>
-    
+
+    <audio id="weddingSong" src="WEDSONG.mp3" preload="auto"></audio>
+
     <div class="timeline-container " id="timelineContent">
-    
-        <div class="timeline-item" data-aos="flip-up" >
+
+        <div class="timeline-item" data-aos="flip-up" data-aos-delay="25" data-aos-duration="1000"
+            data-aos-easing="ease-in-out">
             <div class="timeline-dot"></div>
             <div class="timeline-card">
                 <div class="timeline-date">2019</div>
@@ -25,8 +26,9 @@
                 </div>
             </div>
         </div>
-    
-        <div class="timeline-item" data-aos="flip-up">
+
+        <div class="timeline-item" data-aos="flip-up" data-aos-delay="25" data-aos-duration="1000"
+            data-aos-easing="ease-in-out">
             <div class="timeline-dot"></div>
             <div class="timeline-card">
                 <div class="timeline-date">2020</div>
@@ -36,8 +38,9 @@
                 </div>
             </div>
         </div>
-    
-        <div class="timeline-item" data-aos="flip-up">
+
+        <div class="timeline-item" data-aos="flip-up" data-aos-delay="25" data-aos-duration="1000"
+            data-aos-easing="ease-in-out">
             <div class="timeline-dot"></div>
             <div class="timeline-card">
                 <div class="timeline-date">2022</div>
@@ -47,8 +50,9 @@
                 </div>
             </div>
         </div>
-    
-        <div class="timeline-item" data-aos="flip-up">
+
+        <div class="timeline-item" data-aos="flip-up" data-aos-delay="25" data-aos-duration="1000"
+            data-aos-easing="ease-in-out">
             <div class="timeline-dot"></div>
             <div class="timeline-card">
                 <div class="timeline-date">2024</div>
@@ -58,8 +62,9 @@
                 </div>
             </div>
         </div>
-    
-        <div class="timeline-item" data-aos="flip-up">
+
+        <div class="timeline-item" data-aos="flip-up" data-aos-delay="25" data-aos-duration="1000"
+            data-aos-easing="ease-in-out">
             <div class="timeline-dot"></div>
             <div class="timeline-card">
                 <div class="timeline-date">May 09, 2026</div>
@@ -69,6 +74,6 @@
                 </div>
             </div>
         </div>
-    
+
     </div>
 </section>

@@ -728,17 +728,21 @@
     <script>
 
         // time line
-        const playBtn = document.getElementById("playTimeline")
+        const playBtn = document.querySelector(".play-btn")
+        const StopSong = document.getElementById("StopSong");
         const timeline = document.getElementById("timelineContent")
         const items = document.querySelectorAll(".timeline-item")
         const song = document.getElementById("weddingSong")
 
         playBtn.addEventListener("click", () => {
-
-            song.play().catch(() => { })
-
-            // document.querySelector(".timeline-start").style.display = "none"
-            // timeline.style.display = "block"
+            
+            if(song.paused){
+                playBtn.innerHTML  = "<i class='bx bx-pause'></i>";
+                song.play()
+            }else{
+                song.pause();
+                playBtn.innerHTML  = "<i class='bx bx-play'></i>";
+            }
 
             setTimeout(() => {
                 items.forEach((item, i) => {
@@ -750,6 +754,7 @@
 
         })
 
+       
         const weddingDate = new Date("May 09, 2026 00:00:00").getTime();
 
         function updateCountdown() {
