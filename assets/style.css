@@ -31,6 +31,34 @@ body {
   font-style: normal;
 }
 
+.new-play {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+  color: white;
+  background: linear-gradient(135deg, #1c7ed6, #4dabf7);
+  box-shadow: 0 0 40px rgba(0, 150, 255, 0.6);
+  transition: 0.4s;
+}
+
+#playBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out;
+}
+
+#playBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* timeline */
 .timeline {
   position: relative;
@@ -252,19 +280,13 @@ body {
 }
 
 .time-box {
-  /* background: rgba(0, 0, 0, 0.25); */
   padding: 10px 25px;
   border-radius: 12px;
   width: 100px;
-  /* transition: 0.3s; */
   text-align: center;
-  border: 1px solid #000;
 }
 
-/* .time-box:hover {
-  transform: translateY(-6px);
-  background: rgba(0, 0, 0, 0.35);
-} */
+
 
 .number {
   font-size: 40px;

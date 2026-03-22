@@ -1,25 +1,33 @@
-<?php $scriptName = basename($_SERVER['SCRIPT_NAME']) ?? ''; 
+<?php $scriptName = basename($_SERVER['SCRIPT_NAME']) ?? '';
 
 ?>
 
-<!-- Navigation -->
 <nav class="fixed w-full z-50 transition-all duration-300 py-6 px-6 lg:px-12 flex justify-between items-center"
     id="navbar">
     <img src="./logo.png" alt="our logo" style="width: 100px; height: auto;">
 
-    <!-- Desktop Menu -->
     <div class="hidden md:flex space-x-8 items-center">
-        <a href="<?= $scriptName == "uploader.php" ? 'index.php' : '#home'?>" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Home</a>
-        <a href="<?= $scriptName == "uploader.php" ? 'index.php' : '#party'?>" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">The
-            Party</a>
+        <?php
+        if ($scriptName == 'uploader.php') {
+            ?>
+            <a href="index.php" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Home</a>
+            <?php
+        } else {
+            ?>
+            <a href="#home" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Home</a>
+            <a href="#party" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">The
+                Party</a>
 
-        <a href="<?= $scriptName == "uploader.php" ? 'index.php' : '#sponsors'?>"
-            class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Sponsors</a>
-        <a href="./uploader.php"
-            class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Gallery</a>
+            <a href="#sponsors"
+                class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Sponsors</a>
+            <a href="./uploader.php"
+                class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Gallery</a>
 
-        <a href="<?= $scriptName == "uploader.php" ? 'index.php' : '#rsvp'?>"
-            class="px-6 py-2 border border-ocean-800 rounded-full text-sm uppercase tracking-widest hover:bg-ocean-800 hover:text-white transition-all duration-300">RSVP</a>
+            <a href="#rsvp" class="px-6 py-2 border border-ocean-800 rounded-full text-sm uppercase tracking-widest hover:bg-ocean-800
+            hover:text-white transition-all duration-300">RSVP</a>
+            <?php
+        }
+        ?>
     </div>
 
     <!-- Mobile Menu Button -->
@@ -31,11 +39,26 @@
 <!-- Mobile Menu Overlay -->
 <div id="mobile-menu"
     class="fixed inset-0 bg-pearl z-40 transform translate-x-full transition-transform duration-500 flex flex-col justify-center items-center space-y-8">
-    <a href="<?= $scriptName == "uploader.php" ? 'index.php' : '#home'?>" class="text-2xl font-serif text-ocean-900 mobile-link">Home</a>
-    <a href="<?= $scriptName == "uploader.php" ? 'index.php' : '#party'?>" class="text-2xl font-serif text-ocean-900 mobile-link">The Party</a>
-    <a href="<?= $scriptName == "uploader.php" ? 'index.php' : '#sponsors'?>" class="text-2xl font-serif text-ocean-900 mobile-link">Sponsors</a>
-    <a href="uploader.php" class="text-2xl font-serif text-ocean-900 mobile-link">Wedding Gallery</a>
-    <a href="<?= $scriptName == "uploader.php" ? 'index.php' : '#rsvp'?>" class="text-2xl font-serif text-ocean-900 mobile-link">RSVP</a>
+    <?php
+    if ($scriptName == 'uploader.php') {
+        ?>
+        <a href="index.php" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Home</a>
+        <?php
+    } else {
+        ?>
+        <a href="#home" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Home</a>
+        <a href="#party" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">The
+            Party</a>
+
+        <a href="#sponsors" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Sponsors</a>
+        <a href="./uploader.php"
+            class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Gallery</a>
+
+        <a href="#rsvp" class="px-6 py-2 border border-ocean-800 rounded-full text-sm uppercase tracking-widest hover:bg-ocean-800
+            hover:text-white transition-all duration-300">RSVP</a>
+        <?php
+    }
+    ?>
 </div>
 
 

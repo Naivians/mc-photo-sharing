@@ -1,5 +1,6 @@
 <?php
 require "db.php";
+
 $uploadDir = "uploads/";
 
 if (!file_exists($uploadDir)) {
@@ -10,26 +11,25 @@ $name = $_FILES["photo"]["name"];
 $tmpName = $_FILES["photo"]["tmp_name"];
 
 $ext = pathinfo($name, PATHINFO_EXTENSION);
-
 $prefix = ($ext != "mp4") ? "IMG" : "VID";
 
 $filename = $prefix . "-" . uniqid() . "." . $ext;
-
 $filePath = $uploadDir . $filename;
 
-// $res = insertFile($filename, mime_content_type($filePath));
-
-// if(!$res) {
-//    return json_encode(["error" => "Failed to save file info to database"]);
-//     exit;
-// }
-
+$mime = mime_content_type($tmpName);
 
 if (move_uploaded_file($tmpName, $filePath)) {
-    header("Location: index.php");
-    exit;
-} else {
-    echo "Upload Failed";
-}
 
+    $res = insertFile($filename, $mime);
+
+    if (!$res) {
+        echo json_encode(["error" => "DB insert failed"]);
+        exit;
+    }
+
+    echo json_encode(["success" => "Upload successful"]);
+
+} else {
+    echo json_encode(["error" => "Upload failed"]);
+}
 ?>

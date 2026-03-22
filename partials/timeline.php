@@ -1,8 +1,9 @@
 <section class="py-24 px-6 bg-ocean-950 timelineBackround">
     <div class="timeline-start">
 
-        <h2 class="start-text wedding-font text-white " data-aos="fade-up" data-aos-delay="25" data-aos-duration="1000"
-            data-aos-easing="ease-in-out">This song tells our love story</h2>
+        <h2 class="start-text font-serif text-white " data-aos="fade-up" data-aos-delay="25" data-aos-duration="1000"
+            data-aos-easing="ease-in-out">Every note of this song is ours—we created it together, and somehow it became
+            the story of us.</h2>
 
         <button class="play-btn" id="playTimeline" data-aos="fade-up" data-aos-delay="25" data-aos-duration="1000"
             data-aos-easing="ease-in-out">
@@ -10,6 +11,11 @@
         </button>
 
     </div>
+
+    <button class="new-play show" id="playBtn" data-aos="fade-up" data-aos-delay="25" data-aos-duration="1000"
+        data-aos-easing="ease-in-out">
+        <i class='bx bx-play'></i>
+    </button>
 
     <audio id="weddingSong" src="WEDSONG.mp3" preload="auto"></audio>
 
@@ -19,7 +25,7 @@
             data-aos-easing="ease-in-out">
             <div class="timeline-dot"></div>
             <div class="timeline-card">
-                <div class="timeline-date">2019</div>
+                <div class="timeline-date">2018</div>
                 <div class="timeline-title">First Meeting</div>
                 <div class="timeline-desc">
                     We met unexpectedly and instantly felt a connection that would change our lives forever.
@@ -31,7 +37,7 @@
             data-aos-easing="ease-in-out">
             <div class="timeline-dot"></div>
             <div class="timeline-card">
-                <div class="timeline-date">2020</div>
+                <div class="timeline-date">2019</div>
                 <div class="timeline-title">First Date</div>
                 <div class="timeline-desc">
                     Our first date was filled with laughter, long talks, and the beginning of something beautiful.
@@ -43,7 +49,7 @@
             data-aos-easing="ease-in-out">
             <div class="timeline-dot"></div>
             <div class="timeline-card">
-                <div class="timeline-date">2022</div>
+                <div class="timeline-date">2024</div>
                 <div class="timeline-title">First Trip Together</div>
                 <div class="timeline-desc">
                     We explored new places and realized how much we loved building memories together.
@@ -55,7 +61,7 @@
             data-aos-easing="ease-in-out">
             <div class="timeline-dot"></div>
             <div class="timeline-card">
-                <div class="timeline-date">2024</div>
+                <div class="timeline-date">2025</div>
                 <div class="timeline-title">The Proposal</div>
                 <div class="timeline-desc">
                     A magical moment when one question changed everything and our forever began.

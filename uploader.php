@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-   <?php include "./partials/headers.php"; ?>
+<?php include "./partials/headers.php"; ?>
 <script>
     tailwind.config = {
         theme: {
@@ -48,7 +48,6 @@
 </script>
 
 <body>
-    <!-- Animated Background -->
     <div class="bg-animation">
         <div class="floating-circle circle-1"></div>
         <div class="floating-circle circle-2"></div>
@@ -77,7 +76,6 @@
                 <input type="file" class="file-input" id="fileInput" multiple accept="image/*,video/*">
                 <div class="upload-progress" id="uploadProgress">
                     <div class="progress-bar" id="progressBar">
-                        <h1>awdkjahjwkdhwad</h1>
                     </div>
                 </div>
             </div>
@@ -113,15 +111,12 @@
         </section>
     </main>
 
-    <!-- Toast Notification -->
     <div class="toast" id="toast">
         <div class="toast-icon">✓</div>
         <span id="toastMessage">Upload successful!</span>
     </div>
 
-    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-        <!-- <p style="position: absolute; top:10px; font-size: 0.9rem; color: white;">Click anywhere to close</p> -->
         <div class="button-group">
             <button class="" id="downloadBtn" onclick="downloadPhoto()">Download <i class="bx bx-arrow-to-bottom">
                 </i></button>
@@ -164,10 +159,6 @@
         let currentLightboxIndex = 0;
         let galleryItems = [];
 
-        // backHome.addEventListener('click', () => {
-        //     window.location.href = "index.php";
-        // })
-
         document.getElementById("lightboxNext").onclick = showNext;
         document.getElementById("lightboxPrev").onclick = showPrev;
 
@@ -179,14 +170,14 @@
             if (window.scrollY > 500) {
                 uploadBtnMobile.classList.add("show");
                 sectionTitle.style.display = "none";
-                // backHome.style.display = "none";
 
             } else {
                 uploadBtnMobile.classList.remove("show");
                 sectionTitle.style.display = "block";
-                // backHome.style.display = "block";
             }
         });
+
+
         window.addEventListener("scroll", function () {
             if (window.scrollY > 700) {
                 sectionTitle.style.display = "none";
@@ -234,7 +225,6 @@
 
             } else {
 
-                // fallback (copy link)
                 navigator.clipboard.writeText(url);
                 alert("Link copied to clipboard!");
 
@@ -252,6 +242,7 @@
 
         async function processFiles(files) {
 
+
             const validFiles = files.filter(f =>
                 f.type.startsWith('image/') || f.type.startsWith('video/')
             );
@@ -260,6 +251,7 @@
                 showToast("Only images or videos allowed");
                 return;
             }
+
 
             uploadProgress.classList.add("show");
 
@@ -271,13 +263,6 @@
                 await uploadFile(optimized);
 
             }
-
-            setTimeout(() => {
-                uploadProgress.classList.remove("show");
-                progressBar.style.width = "0%";
-                showToast("Upload complete");
-            }, 500);
-
             loadGallery();
         }
 
@@ -354,10 +339,8 @@
                     xhr.upload.addEventListener("progress", function (e) {
 
                         if (e.lengthComputable) {
-
                             const percent = (e.loaded / e.total) * 100;
                             progressBar.style.width = percent + "%";
-
                         }
 
                     });
@@ -366,8 +349,15 @@
                 },
 
                 success: function (res) {
-
-                    console.log(res);
+                    const data = JSON.parse(res);
+                    
+                    if (data.error) {
+                        setTimeout(() => {
+                            uploadProgress.classList.remove("show");
+                            progressBar.style.width = "0%";
+                            showToast("Failed to upload");
+                        }, 500);
+                    }
 
                     progressBar.style.width = "100%";
 
@@ -375,6 +365,12 @@
                         uploadProgress.style.display = "none";
                         progressBar.style.width = "0%";
                     }, 800);
+
+                    setTimeout(() => {
+                        uploadProgress.classList.remove("show");
+                        progressBar.style.width = "0%";
+                        showToast(data.success);
+                    }, 500);
 
                     loadGallery();
                 },
@@ -502,7 +498,6 @@
             const item = galleryItems[index];
             const dbid = item.dataset.id;
 
-            console.log("Opening lightbox for item with DB ID:", dbid);
 
             lightbox.dataset.id = dbid;
 
