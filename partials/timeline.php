@@ -17,7 +17,7 @@
         <i class='bx bx-play'></i>
     </button>
 
-    <audio id="weddingSong" src="WEDSONG.mp3" preload="auto"></audio>
+    <audio id="weddingSong" src="wedsong.mp3" preload="auto"></audio>
 
     <div class="timeline-container " id="timelineContent">
 

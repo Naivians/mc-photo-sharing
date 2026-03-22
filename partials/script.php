@@ -9,10 +9,8 @@
     window.addEventListener("scroll", function () {
         if (window.scrollY > 1000) {
             StopSong.classList.add("show");
-            console.log("window size is: ", window.scrollY)
         } else {
             StopSong.classList.remove("show");
-            console.log("window size is: ", window.scrollY)
         }
     });
 

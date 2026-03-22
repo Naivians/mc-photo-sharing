@@ -1,7 +1,7 @@
 <!-- Hero Section -->
 <section id="home" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
     <div class="absolute inset-0 z-0">
-        <img src="./bg.jpg" alt="Wedding Background"
+        <img src="./bg.JPG" alt="Wedding Background"
             class="w-full h-full object-cover object-[center_20%] opacity-90 scale-110 transition-transform duration-[2s] ease-linear"
             id="hero-bg">
         <div class="absolute inset-0 bg-gradient-to-b from-white/[0.0] via-transparent to-pearl"></div>
