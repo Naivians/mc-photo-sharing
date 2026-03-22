@@ -12,7 +12,6 @@
     <?php include "./partials/clock.php"; ?>
     <?php include "./partials/secondary.php"; ?>
     <?php include "./partials/principal.php"; ?>
-    <?php include "./partials/rsvp.php"; ?>
     <?php include "./partials/footer.php"; ?>
     <script src="./assets/main.js"></script>
     <?php include "./partials/script.php"; ?>

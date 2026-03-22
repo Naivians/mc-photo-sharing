@@ -941,7 +941,6 @@ h1 {
   z-index: 1000;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
 
   #enttourage-toggle{

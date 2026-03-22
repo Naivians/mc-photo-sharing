@@ -30,13 +30,11 @@
         ?>
     </div>
 
-    <!-- Mobile Menu Button -->
     <button class="md:hidden z-50 text-ocean-900 focus:outline-none" id="mobile-menu-btn">
         <i class="fas fa-bars text-2xl"></i>
     </button>
 </nav>
 
-<!-- Mobile Menu Overlay -->
 <div id="mobile-menu"
     class="fixed inset-0 bg-pearl z-40 transform translate-x-full transition-transform duration-500 flex flex-col justify-center items-center space-y-8">
     <?php
@@ -64,7 +62,6 @@
 
 <script>
 
-    // Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -76,7 +73,6 @@
         }
     });
 
-    // Mobile Menu
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');

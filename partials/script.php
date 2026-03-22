@@ -1,5 +1,4 @@
 <script>
-    // time line
     const playBtn = document.querySelector(".play-btn")
     const StopSong = document.getElementById("playBtn");
     const timeline = document.getElementById("timelineContent")
@@ -86,7 +85,6 @@
         updateDots('groomsmen');
     }
 
-    // Generate dots
     function generateDots(containerId, trackId) {
         const track = document.getElementById(trackId);
         const container = document.getElementById(containerId);
@@ -106,7 +104,6 @@
         }
     }
 
-    // Update dots on scroll
     function updateDots(type) {
         const track = document.getElementById(`${type}-track`);
         const container = document.getElementById(`${type}-dots`);
@@ -120,7 +117,6 @@
         });
     }
 
-    // Initialize dots
     window.addEventListener('load', () => {
         generateDots('bridesmaids-dots', 'bridesmaids-track');
         generateDots('groomsmen-dots', 'groomsmen-track');
@@ -131,11 +127,9 @@
         generateDots('groomsmen-dots', 'groomsmen-track');
     });
 
-    // Update dots on scroll
     document.getElementById('bridesmaids-track').addEventListener('scroll', () => updateDots('bridesmaids'));
     document.getElementById('groomsmen-track').addEventListener('scroll', () => updateDots('groomsmen'));
 
-    // Tab Switching (Bridesmaids / Groomsmen)
     const btnBridesmaids = document.getElementById('btn-bridesmaids');
     const btnGroomsmen = document.getElementById('btn-groomsmen');
     const gridBridesmaids = document.getElementById('grid-bridesmaids');
@@ -144,26 +138,21 @@
     function switchTab(tab) {
 
         if (tab === 'bridesmaids') {
-            // Style Buttons
             btnBridesmaids.classList.add('bg-ocean-800', 'text-white', 'shadow-md');
             btnBridesmaids.classList.remove('text-ocean-600', 'hover:text-ocean-900');
             btnGroomsmen.classList.remove('bg-ocean-800', 'text-white', 'shadow-md');
             btnGroomsmen.classList.add('text-ocean-600', 'hover:text-ocean-900');
 
-            // Show/Hide Grids
             gridBridesmaids.style.display = "block"
             gridGroomsmen.classList.add('opacity-0', 'pointer-events-none');
         } else {
 
-            // Style Buttons
             btnGroomsmen.classList.add('bg-ocean-800', 'text-white', 'shadow-md');
             btnGroomsmen.classList.remove('text-ocean-600', 'hover:text-ocean-900');
             btnBridesmaids.classList.remove('bg-ocean-800', 'text-white', 'shadow-md');
             btnBridesmaids.classList.add('text-ocean-600', 'hover:text-ocean-900');
 
-            // Show/Hide Grids
             gridGroomsmen.classList.remove('opacity-0', 'pointer-events-none');
-            // gridBridesmaids.classList.add('opacity-0', 'pointer-events-none');
             gridBridesmaids.style.display = "none"
         }
     }
@@ -171,7 +160,6 @@
     btnBridesmaids.addEventListener('click', () => switchTab('bridesmaids'));
     btnGroomsmen.addEventListener('click', () => switchTab('groomsmen'));
 
-    // Intersection Observer for Reveal Animations
     const observerOptions = {
         threshold: 0.15,
         rootMargin: "0px 0px -50px 0px"
@@ -190,7 +178,6 @@
         observer.observe(el);
     });
 
-    // RSVP Form Handling
     const form = document.getElementById('rsvp-form');
     const modal = document.getElementById('success-modal');
     const modalContent = document.getElementById('modal-content');
@@ -201,21 +188,17 @@
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        // Simulate API call
         const btn = form.querySelector('button');
         const originalText = btn.innerHTML;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         btn.disabled = true;
 
         setTimeout(() => {
-            // Show Modal
             modal.classList.remove('hidden');
-            // Trigger reflow
             void modal.offsetWidth;
             modalContent.classList.remove('scale-90', 'opacity-0');
             modalContent.classList.add('scale-100', 'opacity-100');
 
-            // Reset Form
             form.reset();
             btn.innerHTML = originalText;
             btn.disabled = false;
@@ -233,7 +216,6 @@
     closeModal.addEventListener('click', hideModal);
     modalBackdrop.addEventListener('click', hideModal);
 
-    // Parallax Effect for Hero Image
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         const heroBg = document.getElementById('hero-bg');

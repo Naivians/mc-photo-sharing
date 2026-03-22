@@ -1,3 +1,8 @@
+<?php
+require "db.php";
+$uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,37 +60,49 @@
     </div>
 
     <?php include "./partials/loader.php"; ?>
-
+    <input type="hidden" id="uploadButtonAction" value="<?= $uploadBtn ?>">
 
     <?php include "./partials/nav.php"; ?>
 
     <main class="container pt-12">
+
         <section class="upload-section">
             <div class="upload-area" id="uploadArea">
-                <div class="upload-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
-                    </svg>
-                </div>
-                <div class="upload-text">
-                    <h3>Share Your Moments</h3>
-                    <p>Drag & drop photos and videos here, or click to browse</p>
-                </div>
-                <button class="upload-btn" id="uploadBtn">Select Files</button>
-                <input type="file" class="file-input" id="fileInput" multiple accept="image/*,video/*">
-                <div class="upload-progress" id="uploadProgress">
-                    <div class="progress-bar" id="progressBar">
+                <?php
+                if ($uploadBtn == "enable") {
+                    ?>
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z" />
+                        </svg>
                     </div>
-                </div>
+                    <div class="upload-text">
+                        <h3>Share Your Moments</h3>
+                        <p>Drag & drop photos and videos here, or click to browse</p>
+                    </div>
+                    <button class="upload-btn" id="uploadBtn">Select Files</button>
+                    <input type="file" class="file-input" id="fileInput" multiple accept="image/*,video/*">
+                    <div class="upload-progress" id="uploadProgress">
+                        <div class="progress-bar" id="progressBar">
+                        </div>
+                    </div>
+                    <button class="upload-btn" id="uploadBtnMobile">
+                        <span>Upload</span>
+                    </button>
+                    <?php
+                } else {
+                    ?>
+                    <h1 class="text-xl font-semibold text-center">
+                        Uploads will be enabled during the wedding
+                    </h1>
+                    <?php
+                }
+                ?>
             </div>
         </section>
 
-        <button class="upload-btn" id="uploadBtnMobile">
-            <span>Upload</span>
-        </button>
 
-        <!-- Gallery Section -->
         <section class="gallery-section">
             <div class="section-header">
                 <h2 class="section-title" id="section-title">Wedding Gallery</h2>
@@ -154,28 +171,36 @@
         const filterTabs = document.querySelectorAll('.filter-tab');
         const uploadProgress = document.getElementById('uploadProgress');
         const progressBar = document.getElementById('progressBar');
+        const uploadButtonAction = document.getElementById('uploadButtonAction').value;
 
         let currentFilter = 'all';
         let currentLightboxIndex = 0;
         let galleryItems = [];
 
+
         document.getElementById("lightboxNext").onclick = showNext;
         document.getElementById("lightboxPrev").onclick = showPrev;
 
-        uploadBtn.addEventListener('click', () => fileInput.click());
-        uploadBtnMobile.addEventListener('click', () => fileInput.click());
+        if (uploadButtonAction == "enable") {
+            uploadBtn.addEventListener('click', () => fileInput.click());
+            uploadBtnMobile.addEventListener('click', () => fileInput.click());
+        }
 
-        window.addEventListener("scroll", function () {
 
-            if (window.scrollY > 500) {
-                uploadBtnMobile.classList.add("show");
-                sectionTitle.style.display = "none";
+        if (uploadButtonAction == "enable") {
 
-            } else {
-                uploadBtnMobile.classList.remove("show");
-                sectionTitle.style.display = "block";
-            }
-        });
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 500) {
+                    uploadBtnMobile.classList.add("show");
+                    sectionTitle.style.display = "none";
+
+                } else {
+                    uploadBtnMobile.classList.remove("show");
+                    sectionTitle.style.display = "block";
+                }
+            });
+        }
+
 
 
         window.addEventListener("scroll", function () {
@@ -186,28 +211,31 @@
             }
         });
 
-        uploadArea.addEventListener('click', (e) => {
-            if (e.target !== uploadBtn) fileInput.click();
-        });
+        if (uploadButtonAction == "enable") {
+            uploadArea.addEventListener('click', (e) => {
+                if (e.target !== uploadBtn) fileInput.click();
+            });
 
-        fileInput.addEventListener('change', e => {
-            processFiles(Array.from(e.target.files));
-        });
+            fileInput.addEventListener('change', e => {
+                processFiles(Array.from(e.target.files));
+            });
 
-        uploadArea.addEventListener('dragover', e => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
+            uploadArea.addEventListener('dragover', e => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
 
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
-        });
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('dragover');
+            });
 
-        uploadArea.addEventListener('drop', e => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
-            processFiles(Array.from(e.dataTransfer.files));
-        });
+            uploadArea.addEventListener('drop', e => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                processFiles(Array.from(e.dataTransfer.files));
+            });
+        }
+
 
         function sharePhoto() {
 
@@ -350,7 +378,7 @@
 
                 success: function (res) {
                     const data = JSON.parse(res);
-                    
+
                     if (data.error) {
                         setTimeout(() => {
                             uploadProgress.classList.remove("show");
