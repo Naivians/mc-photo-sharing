@@ -943,6 +943,11 @@ h1 {
 
 /* Responsive */
 @media (max-width: 768px) {
+
+  #enttourage-toggle{
+    margin-top: 50px;
+  }
+
   .timeline-container::before {
     left: 20px;
   }

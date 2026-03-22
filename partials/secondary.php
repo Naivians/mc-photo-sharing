@@ -1,18 +1,14 @@
- <!-- The Wedding Party Section -->
     <section id="party" class="py-24 px-6 lg:px-20 bg-pearl relative">
 
         <div class="max-w-7xl mx-auto">
-            <!-- Section Header -->
             <div class="text-center mb-20 " data-aos="fade-up">
                 <span class="text-ocean-500 uppercase tracking-widest text-xs font-bold">The Wedding Party</span>
                 <h2 class="text-5xl md:text-6xl font-serif text-ocean-900 mt-2 mb-6">Best Man & Maid of Honor</h2>
                 <div class="w-24 h-1 bg-ocean-200 mx-auto"></div>
             </div>
 
-            <!-- Grid Container -->
             <div class="relative min-h-[700px] max-w-5xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-items-center">
-                    <!-- Maid of Honor -->
                     <div class="group relative overflow-hidden rounded-2xl cursor-pointer reveal w-full max-w-sm"
                         data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
                         <div class="aspect-[4/5] overflow-hidden">
@@ -27,7 +23,6 @@
                         </div>
                     </div>
 
-                    <!-- Maid of Honor -->
                     <div class="group relative overflow-hidden rounded-2xl cursor-pointer reveal w-full max-w-sm"
                         data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
                         <div class="aspect-[4/5] overflow-hidden">
@@ -44,8 +39,7 @@
                 </div>
             </div>
 
-            <!-- Toggle Switch -->
-            <div class="flex justify-center mb-16" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
+            <div class="flex justify-center mb-16" id="enttourage-toggle" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
                 data-aos-easing="ease-in-out">
                 <div class="bg-white p-1 rounded-full shadow-lg border border-ocean-100 inline-flex">
                     <button id="btn-bridesmaids"
@@ -65,10 +59,8 @@
                 <div class="w-24 h-1 bg-ocean-200 mx-auto"></div>
             </div>
 
-            <!-- Grid Container -->
             <div class="relative min-h-[500px] md:min-h-[550px] lg:min-h-[600px]">
 
-                <!-- Bridesmaids Carousel -->
                 <div id="grid-bridesmaids" class="transition-all duration-500 opacity-100 absolute w-full top-0 left-0"
                     data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <div class="text-center mb-8">
@@ -76,9 +68,7 @@
                         <div class="w-16 h-0.5 bg-ocean-300 mx-auto mt-2"></div>
                     </div>
 
-                    <!-- Carousel Container -->
-                    <div class="relative px-12 md:px-16">
-                        <!-- Navigation Buttons -->
+                    <div class="relative  md:px-16">
                         <button onclick="scrollBridesmaids(-1)"
                             class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center text-ocean-800 transition-all hover:scale-110">
                             <i class="fas fa-chevron-left"></i>
@@ -267,7 +257,6 @@
                     </div>
                 </div>
 
-                <!-- Groomsmen Carousel (Hidden by default) -->
                 <div id="grid-groomsmen"
                     class="transition-all duration-500 opacity-0 pointer-events-none absolute w-full top-0 left-0">
                     <div class="text-center mb-8">
@@ -276,7 +265,7 @@
                     </div>
 
                     <!-- Carousel Container -->
-                    <div class="relative px-12 md:px-16">
+                    <div class="relative md:px-16">
                         <!-- Navigation Buttons -->
                         <button onclick="scrollGroomsmen(-1)"
                             class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center text-ocean-800 transition-all hover:scale-110">
