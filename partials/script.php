@@ -178,44 +178,10 @@
         observer.observe(el);
     });
 
-    const form = document.getElementById('rsvp-form');
     const modal = document.getElementById('success-modal');
     const modalContent = document.getElementById('modal-content');
     const closeModal = document.getElementById('close-modal');
     const modalBackdrop = document.getElementById('modal-backdrop');
-
-
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('button');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        btn.disabled = true;
-
-        setTimeout(() => {
-            modal.classList.remove('hidden');
-            void modal.offsetWidth;
-            modalContent.classList.remove('scale-90', 'opacity-0');
-            modalContent.classList.add('scale-100', 'opacity-100');
-
-            form.reset();
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-        }, 1500);
-    });
-
-    function hideModal() {
-        modalContent.classList.remove('scale-100', 'opacity-100');
-        modalContent.classList.add('scale-90', 'opacity-0');
-        setTimeout(() => {
-            modal.classList.add('hidden');
-        }, 300);
-    }
-
-    closeModal.addEventListener('click', hideModal);
-    modalBackdrop.addEventListener('click', hideModal);
-
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         const heroBg = document.getElementById('hero-bg');
