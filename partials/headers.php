@@ -6,8 +6,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="icon" type="image/png" href="logo.png">
+
+    <link rel="stylesheet" href="<?php echo (isset($scriptName) && $scriptName == 'admin.php')
+        ? '../assets/style.css'
+        : './assets/style.css'; ?>">
+
+    <link rel="icon" type="image/png" href="<?php echo (isset($scriptName) && $scriptName == 'admin.php')
+        ? './logo.png'
+        : 'logo.png'; ?>">
+        
     <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
     <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
@@ -83,7 +90,6 @@
             background: #7dd3fc;
         }
 
-        /* Glassmorphism Utilities */
         .glass {
             background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(12px);
@@ -98,13 +104,11 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Text Stroke */
         .text-stroke {
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
             color: transparent;
         }
 
-        /* Loader */
         #loader {
             position: fixed;
             inset: 0;
@@ -116,7 +120,6 @@
             transition: opacity 0.8s ease-out;
         }
 
-        /* Reveal on Scroll Class */
         .reveal {
             opacity: 0;
             transform: translateY(30px);

@@ -286,8 +286,6 @@ body {
   text-align: center;
 }
 
-
-
 .number {
   font-size: 40px;
   font-weight: 600;
@@ -941,10 +939,48 @@ h1 {
   z-index: 1000;
 }
 
-@media (max-width: 768px) {
+#light-nav-close,
+#light-nav-close-desktop {
+  transition: opacity 0.3s ease;
+}
 
-  #enttourage-toggle{
+#light-nav-close {
+  opacity: 0;
+}
+
+#light-nav-close-desktop {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+#uploadBtn,
+#uploading {
+  transition: opacity 0.4s ease;
+}
+
+#uploadBtn.hide,
+#uploading.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#uploadBtn.show,
+#uploading.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  #enttourage-toggle {
     margin-top: 50px;
+  }
+
+  #light-nav-close {
+    opacity: 1;
+  }
+
+  #light-nav-close-desktop {
+    opacity: 0;
   }
 
   .timeline-container::before {

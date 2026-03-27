@@ -1,5 +1,4 @@
 
-    <!-- Footer -->
     <footer class="bg-ocean-950 text-ocean-400 py-12 text-center">
         <div class="font-serif text-3xl text-white mb-4">M & C</div>
         <p class="text-sm uppercase tracking-widest mb-8">May 9th, 2026 • The Home of Authentic Laing 2 - Brick Road, Sta. Lucia Cainta Rizal</p>

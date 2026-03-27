@@ -1,14 +1,19 @@
 <?php
 require "../db.php";
-$uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disabled" : 'enable';
+$uploadBtn = isset(getdisableUploadBtn()['isEnable']) && getdisableUploadBtn()['isEnable'] == "0" ? "disabled" : 'enable';
+$scriptName = basename($_SERVER['SCRIPT_NAME']) ?? '';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-<?php include "headers.php"?>
+<?php include "headers.php" ?>
 
 
 <body class="bg-gray-50 p-6">
+
+    <div class="toast" id="toast">
+        <div class="toast-icon">✓</div>
+        <span id="toastMessage">Upload successful!</span>
+    </div>
 
     <div class="max-w-5xl mx-auto">
         <h1 class="text-2xl font-bold mb-6">📸 Wedding Photo Dashboard</h1>
@@ -28,7 +33,6 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disabled" : 'enable';
             <span class="text-gray-700">Enable Uploads</span>
             <input id="toggleUpload" type="checkbox" class="w-5 h-5" <?= $uploadBtn == "enable" ? "checked" : "" ?>>
         </div>
-
 
         <div class="bg-white p-4 rounded-2xl shadow">
             <h2 class="text-lg font-semibold mb-4">Photos</h2>
@@ -68,6 +72,49 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disabled" : 'enable';
         const nextBtn = document.getElementById('nextBtn');
         const pageInfo = document.getElementById('pageInfo');
 
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+
+        function showToast(message) {
+
+            toastMessage.textContent = message;
+
+            toast.classList.add("show");
+
+            setTimeout(() => {
+
+                toast.classList.remove("show");
+
+            }, 3000);
+
+        }
+
+        function actionButton(isEnableBtn) {
+            $.ajax({
+                url: "../disable_enable_btn.php",
+                type: "POST",
+                data: {
+                    action_button: "upload_btn",
+                    isEnable: isEnableBtn ? 1 : 0
+                },
+                success: (res) => {
+                    res = JSON.parse(res)
+                    if(!res.status){
+                        showToast(res.msg)
+                    }
+
+                    showToast(res.msg);
+                }
+            });
+        }
+
+        toggleUpload.addEventListener("change", () => {
+            actionButton(toggleUpload.checked);
+
+            console.log(toggleUpload.checked);
+            
+        });
+
 
 
         function getPhoto() {
@@ -102,9 +149,6 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disabled" : 'enable';
             const tableBody = document.getElementById('tableBody');
             tableBody.innerHTML = '';
 
-            console.log(photos);
-
-
             const start = (currentPage - 1) * perPage;
             const paginated = photos.slice(start, start + perPage);
 
@@ -133,8 +177,6 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disabled" : 'enable';
             downloads++;
             updateStats();
         }
-
-
 
         prevBtn.addEventListener('click', () => {
             if (currentPage > 1) currentPage--;

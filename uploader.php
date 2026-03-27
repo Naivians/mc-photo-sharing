@@ -1,6 +1,6 @@
 <?php
 require "db.php";
-$uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
+$uploadBtn = isset(getDisableUploadBtn()['isEnable']) && getDisableUploadBtn()['isEnable'] == "0" ? "disabled" : 'enable';
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +52,7 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
     }
 </script>
 
+
 <body>
     <div class="bg-animation">
         <div class="floating-circle circle-1"></div>
@@ -62,6 +63,8 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
     <?php include "./partials/loader.php"; ?>
     <input type="hidden" id="uploadButtonAction" value="<?= $uploadBtn ?>">
 
+
+
     <?php include "./partials/nav.php"; ?>
 
     <main class="container pt-12">
@@ -69,7 +72,7 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
         <section class="upload-section">
             <div class="upload-area" id="uploadArea">
                 <?php
-                if ($uploadBtn == "enable") {
+                if (isset($uploadBtn) && $uploadBtn == "enable") {
                     ?>
                     <div class="upload-icon">
                         <svg viewBox="0 0 24 24">
@@ -79,9 +82,10 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
                     </div>
                     <div class="upload-text">
                         <h3>Share Your Moments</h3>
-                        <p>Drag & drop photos and videos here, or click to browse</p>
+                        <p>upload photos and videos here, or click to browse</p>
                     </div>
                     <button class="upload-btn" id="uploadBtn">Select Files</button>
+                    <h2 class="mt-4 hide" style="font-size: 2rem;" id="uploading">uploading....</h2>
                     <input type="file" class="file-input" id="fileInput" multiple accept="image/*,video/*">
                     <div class="upload-progress" id="uploadProgress">
                         <div class="progress-bar" id="progressBar">
@@ -94,7 +98,7 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
                 } else {
                     ?>
                     <h1 class="text-xl font-semibold text-center">
-                        Uploads will be enabled during the wedding
+                        Photo uploads will be enabled during the wedding and will remain available 3 days afterward.
                     </h1>
                     <?php
                 }
@@ -135,10 +139,13 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
 
     <div class="lightbox" id="lightbox">
         <div class="button-group">
-            <button class="" id="downloadBtn" onclick="downloadPhoto()">Download <i class="bx bx-arrow-to-bottom">
+            <button class="downloadBtn" id="light-nav-close-desktop"><i class="bx bx-x"></i></button>
+            <button class="" id="downloadBtn" onclick="downloadPhoto()"><i class="bx bx-arrow-to-bottom">
                 </i></button>
         </div>
+
         <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+        <button class="lightbox-nav" id="light-nav-close"><i class="bx bx-x"></i></button>
         <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
         <div class="lightbox-content">
             <button class="lightbox-close" id="lightboxClose">&times;</button>
@@ -155,6 +162,8 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
         const GALLERY_URL = "gallery.php";
 
         const uploadArea = document.getElementById('uploadArea');
+        const uploading = document.getElementById('uploading');
+        const uploadSection = document.querySelector('.upload-section');
         const backHome = document.getElementById('back-to-home');
         const fileInput = document.getElementById('fileInput');
         const uploadBtn = document.getElementById('uploadBtn');
@@ -164,10 +173,11 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
         const toast = document.getElementById('toast');
         const toastMessage = document.getElementById('toastMessage');
         const lightbox = document.getElementById('lightbox');
-        const lightboxClose = document.getElementById('lightboxClose');
         const lightboxMedia = document.getElementById('lightboxMedia');
         const lightboxPrev = document.getElementById('lightboxPrev');
         const lightboxNext = document.getElementById('lightboxNext');
+        const lightboxClose = document.getElementById('light-nav-close');
+        const lightboxCloseDesktop = document.getElementById('light-nav-close-desktop');
         const filterTabs = document.querySelectorAll('.filter-tab');
         const uploadProgress = document.getElementById('uploadProgress');
         const progressBar = document.getElementById('progressBar');
@@ -176,6 +186,7 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
         let currentFilter = 'all';
         let currentLightboxIndex = 0;
         let galleryItems = [];
+
 
 
         document.getElementById("lightboxNext").onclick = showNext;
@@ -200,9 +211,6 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
                 }
             });
         }
-
-
-
         window.addEventListener("scroll", function () {
             if (window.scrollY > 700) {
                 sectionTitle.style.display = "none";
@@ -212,28 +220,11 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
         });
 
         if (uploadButtonAction == "enable") {
-            uploadArea.addEventListener('click', (e) => {
-                if (e.target !== uploadBtn) fileInput.click();
-            });
-
             fileInput.addEventListener('change', e => {
                 processFiles(Array.from(e.target.files));
             });
 
-            uploadArea.addEventListener('dragover', e => {
-                e.preventDefault();
-                uploadArea.classList.add('dragover');
-            });
-
-            uploadArea.addEventListener('dragleave', () => {
-                uploadArea.classList.remove('dragover');
-            });
-
-            uploadArea.addEventListener('drop', e => {
-                e.preventDefault();
-                uploadArea.classList.remove('dragover');
-                processFiles(Array.from(e.dataTransfer.files));
-            });
+            
         }
 
 
@@ -266,32 +257,6 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
 
             window.location.href = "download.php?file=" + encodeURIComponent(file);
 
-        }
-
-        async function processFiles(files) {
-
-
-            const validFiles = files.filter(f =>
-                f.type.startsWith('image/') || f.type.startsWith('video/')
-            );
-
-            if (validFiles.length === 0) {
-                showToast("Only images or videos allowed");
-                return;
-            }
-
-
-            uploadProgress.classList.add("show");
-
-            for (let i = 0; i < validFiles.length; i++) {
-
-                progressBar.style.width = ((i + 1) / validFiles.length) * 100 + "%";
-
-                const optimized = await compressImage(validFiles[i]);
-                await uploadFile(optimized);
-
-            }
-            loadGallery();
         }
 
         async function compressImage(file) {
@@ -341,74 +306,107 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
 
         }
 
-        function handleFiles(files) {
+        async function processFiles(files) {
+            const validFiles = getValidFiles(files);
 
-            [...files].forEach(file => uploadFile(file));
+            if (!validFiles.length) {
+                showToast("Only images or videos allowed");
+                return;
+            }
 
+            startUploadUI();
+
+            try {
+                const processedFiles = await processAllFiles(validFiles);
+                await uploadAllFiles(processedFiles);
+
+                showToast("All uploads complete ✅");
+
+            } catch (err) {
+                console.error(err);
+                showToast("Upload failed ❌");
+            } finally {
+                endUploadUI();
+                loadGallery();
+            }
         }
 
-        function uploadFile(file) {
+        function getValidFiles(files) {
+            return files.filter(f =>
+                f.type.startsWith('image/') || f.type.startsWith('video/')
+            );
+        }
 
-            const formData = new FormData();
-            formData.append("photo", file);
+        function startUploadUI() {
+            uploading.classList.remove("hide");
+            uploadBtn.classList.remove('show');
+            uploadBtn.classList.add('hide');
+            uploadProgress.classList.add("show");
+        }
 
-            uploadProgress.style.display = "block";
-            $.ajax({
-                url: "uploads.php",
-                type: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
+        function endUploadUI() {
+            uploading.classList.add("hide");
+            uploadBtn.classList.add('hide');
+            uploadBtn.classList.remove('hide');
+            uploadBtn.classList.add('show');
+            uploadProgress.classList.remove("show");
+            progressBar.style.width = "0%";
+        }
 
-                xhr: function () {
+        async function processAllFiles(files) {
+            return await Promise.all(
+                files.map(file => compressImage(file))
+            );
+        }
 
-                    let xhr = new window.XMLHttpRequest();
+        async function uploadAllFiles(files) {
+            const progressArray = new Array(files.length).fill(0);
 
-                    xhr.upload.addEventListener("progress", function (e) {
+            await Promise.all(files.map((file, index) => {
 
-                        if (e.lengthComputable) {
-                            const percent = (e.loaded / e.total) * 100;
-                            progressBar.style.width = percent + "%";
-                        }
+                return uploadFile(file, (progress) => {
+                    progressArray[index] = progress;
 
-                    });
+                    const totalProgress =
+                        progressArray.reduce((a, b) => a + b, 0) / files.length;
 
-                    return xhr;
-                },
+                    progressBar.style.width = (totalProgress * 100) + "%";
+                });
+                console.log("progress:", totalProgress);
 
-                success: function (res) {
-                    const data = JSON.parse(res);
+            }));
+        }
 
-                    if (data.error) {
-                        setTimeout(() => {
-                            uploadProgress.classList.remove("show");
-                            progressBar.style.width = "0%";
-                            showToast("Failed to upload");
-                        }, 500);
-                    }
+        function uploadFile(file, onProgress) {
+            return new Promise((resolve, reject) => {
 
-                    progressBar.style.width = "100%";
+                const formData = new FormData();
+                formData.append("photo", file);
 
-                    setTimeout(() => {
-                        uploadProgress.style.display = "none";
-                        progressBar.style.width = "0%";
-                    }, 800);
+                $.ajax({
+                    url: "uploads.php",
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
 
-                    setTimeout(() => {
-                        uploadProgress.classList.remove("show");
-                        progressBar.style.width = "0%";
-                        showToast(data.success);
-                    }, 500);
+                    xhr: function () {
+                        let xhr = new XMLHttpRequest();
 
-                    loadGallery();
-                },
+                        xhr.upload.addEventListener("progress", function (e) {
+                            if (e.lengthComputable) {
+                                onProgress(e.loaded / e.total);
+                            }
+                        });
 
-                error: function () {
-                    alert("Upload failed");
-                }
+                        return xhr;
+                    },
+
+                    success: res => resolve(JSON.parse(res)),
+                    error: () => reject("Upload failed")
+                });
 
             });
-
         }
 
         async function loadGallery() {
@@ -566,10 +564,9 @@ $uploadBtn = disableUploadBtn()['isEnable'] == "0" ? "disbaled" : 'enable';
         }
 
         lightboxClose.addEventListener("click", closeLightbox);
+        lightboxCloseDesktop.addEventListener("click", closeLightbox);
 
-        lightbox.addEventListener("click", e => {
-            if (e.target === lightbox) closeLightbox();
-        });
+
 
         function showToast(message) {
 

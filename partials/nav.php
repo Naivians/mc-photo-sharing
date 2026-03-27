@@ -1,6 +1,4 @@
-<?php $scriptName = basename($_SERVER['SCRIPT_NAME']) ?? '';
-
-?>
+<?php $scriptName = basename($_SERVER['SCRIPT_NAME']) ?? '';?>
 
 <nav class="fixed w-full z-50 transition-all duration-300 py-6 px-6 lg:px-12 flex justify-between items-center"
     id="navbar">
@@ -22,9 +20,6 @@
                 class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Sponsors</a>
             <a href="./uploader.php"
                 class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Gallery</a>
-
-            <a href="#rsvp" class="px-6 py-2 border border-ocean-800 rounded-full text-sm uppercase tracking-widest hover:bg-ocean-800
-            hover:text-white transition-all duration-300">RSVP</a>
             <?php
         }
         ?>
@@ -51,9 +46,6 @@
         <a href="#sponsors" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Sponsors</a>
         <a href="./uploader.php"
             class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Gallery</a>
-
-        <a href="#rsvp" class="px-6 py-2 border border-ocean-800 rounded-full text-sm uppercase tracking-widest hover:bg-ocean-800
-            hover:text-white transition-all duration-300">RSVP</a>
         <?php
     }
     ?>

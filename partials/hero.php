@@ -1,4 +1,3 @@
-<!-- Hero Section -->
 <section id="home" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
     <div class="absolute inset-0 z-0">
         <img src="./bg.JPG" alt="Wedding Background"
@@ -7,7 +6,6 @@
         <div class="absolute inset-0 bg-gradient-to-b from-white/[0.0] via-transparent to-pearl"></div>
     </div>
 
-    <!-- Decorative Elements -->
     <div class="absolute top-1/4 left-10 w-32 h-32 border border-white/40 rounded-full animate-float hidden lg:block">
     </div>
     <div class="absolute bottom-1/4 right-10 w-48 h-48 border border-ocean-200/50 rounded-full animate-float hidden lg:block"
@@ -21,7 +19,6 @@
     </div>
 
 
-    <!-- Scroll Indicator -->
     <div class="absolute bottom-5  transform -translate-x-1/2 animate-bounce text-ocean-800 text-center">
         <span><?= $scriptName == "uploader.php" ? 'scroll down to upload' : '' ?></span> <br>
         <i class="fas fa-chevron-down text-xl"></i>
