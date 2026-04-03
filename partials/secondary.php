@@ -7,13 +7,12 @@
             <div class="w-24 h-1 bg-ocean-200 mx-auto"></div>
         </div>
 
-        <div class="relative min-h-[700px] max-w-5xl mx-auto">
+        <div class="relative min-h-[600px] max-w-5xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-items-center">
                 <div class="group relative overflow-hidden rounded-2xl cursor-pointer reveal w-full max-w-sm"
                     data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <div class="aspect-[4/5] overflow-hidden">
-                        <img src="./assets/img/grooms/Erwin.png"
-                            alt="Maid of Honor"
+                        <img src="./assets/img/grooms/Erwin.png" alt="Maid of Honor"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -25,8 +24,7 @@
                 <div class="group relative overflow-hidden rounded-2xl cursor-pointer reveal w-full max-w-sm"
                     data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
                     <div class="aspect-[4/5] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
-                            alt="Best Man"
+                        <img src="./assets/img/bridesmaid/beamay.png" alt="Best Man"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -37,19 +35,7 @@
             </div>
         </div>
 
-        <div class="flex justify-center mb-16" id="enttourage-toggle" data-aos="fade-up" data-aos-delay="50"
-            data-aos-duration="1000" data-aos-easing="ease-in-out">
-            <div class="bg-white p-1 rounded-full shadow-lg border border-ocean-100 inline-flex">
-                <button id="btn-bridesmaids"
-                    class="px-8 py-3 rounded-full text-sm uppercase tracking-widest transition-all duration-300 bg-ocean-800 text-white shadow-md">
-                    Bridesmaids
-                </button>
-                <button id="btn-groomsmen"
-                    class="px-8 py-3 rounded-full text-sm uppercase tracking-widest transition-all duration-300 text-ocean-600 hover:text-ocean-900">
-                    Groomsmen
-                </button>
-            </div>
-        </div>
+       
 
         <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
             data-aos-easing="ease-in-out">
@@ -57,8 +43,8 @@
             <div class="w-24 h-1 bg-ocean-200 mx-auto"></div>
         </div>
 
-        <div class="relative min-h-[500px] md:min-h-[550px] lg:min-h-[600px]">
-
+        <!-- brides -->
+        <div class="relative min-h-[500px] md:min-h-[550px] lg:min-h-[600px] mt-12">
             <div id="grid-bridesmaids" class="transition-all duration-500 opacity-100 absolute w-full top-0 left-0"
                 data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
                 <div class="text-center mb-8">
@@ -80,168 +66,145 @@
                         class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth pb-4"
                         style="scrollbar-width: none; -ms-overflow-style: none;">
 
-                        <div
-                            class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal">
-                            <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
-                                    alt="Maid of Honor"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
-                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Maid of Honor</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
-                            </div>
-                        </div>
-
-                        <!-- Bridesmaid 2 -->
                         <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
                             style="transition-delay: 50ms;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
-                                    alt="Bridesmaid"
+                                <img src="./assets/img/bridesmaid/vence.png" alt="Bridesmaid"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Vence Telebrico</h3>
                             </div>
                         </div>
 
-                        <!-- Bridesmaid 3 -->
                         <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
                             style="transition-delay: 100ms;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
-                                    alt="Bridesmaid"
+                                <img src="./assets/img/bridesmaid/barbs.png" alt="Bridesmaid"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Barbie Austria</h3>
                             </div>
                         </div>
 
-                        <!-- Bridesmaid 4 -->
                         <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
                             style="transition-delay: 150ms;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80"
-                                    alt="Bridesmaid"
+                                <img src="./assets/img/bridesmaid/grasya.png" alt="Bridesmaid"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Grasya Zapanta</h3>
                             </div>
                         </div>
 
-                        <!-- Bridesmaid 5 -->
                         <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
                             style="transition-delay: 200ms;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80"
-                                    alt="Bridesmaid"
+                                <img src="./assets/img/bridesmaid/joan.png" alt="Bridesmaid"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Joan Madera</h3>
                             </div>
-
                         </div>
 
-                        <!-- Bridesmaid 6 -->
+                        <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                            style="transition-delay: 200ms;">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="./assets/img/bridesmaid/hann.png" alt="Bridesmaid"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
+                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
+                                <h3 class="text-white text-3xl font-serif">Hann Amiler</h3>
+                            </div>
+                        </div>
+
                         <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
                             style="transition-delay: 250ms;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=800&q=80"
-                                    alt="Bridesmaid"
+                                <img src="./assets/img/bridesmaid/anna.png" alt="Bridesmaid"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Anna Al Dave</h3>
                             </div>
                         </div>
 
-                        <!-- Bridesmaid 7 -->
-                        <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
-                            style="transition-delay: 300ms;">
-                            <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=800&q=80"
-                                    alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
-                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
-                            </div>
-                        </div>
-
-                        <!-- Bridesmaid 8 -->
                         <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
                             style="transition-delay: 350ms;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80"
-                                    alt="Bridesmaid"
+                                <img src="./assets/img/bridesmaid/hazel.png" alt="Bridesmaid"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Hazel Villanueva</h3>
                             </div>
                         </div>
 
-                        <!-- Bridesmaid 9 -->
                         <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
                             style="transition-delay: 400ms;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80"
-                                    alt="Bridesmaid"
+                                <img src="./assets/img/bridesmaid/jen.png" alt="Bridesmaid"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Jennelyn Albarico</h3>
                             </div>
                         </div>
 
-                        <!-- Bridesmaid 10 -->
                         <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
                             style="transition-delay: 450ms;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1485893086445-ed75865251e0?auto=format&fit=crop&w=800&q=80"
-                                    alt="Bridesmaid"
+                                <img src="./assets/img/bridesmaid/michelle.png" alt="Bridesmaid"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Michelle Justiniano</h3>
                             </div>
                         </div>
 
-                        <!-- Bridesmaid 11 -->
                         <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
                             style="transition-delay: 500ms;">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=800&q=80"
-                                    alt="Bridesmaid"
+                                <img src="./assets/img/bridesmaid/rhia.png" alt="Bridesmaid"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Rhia Mae Madera</h3>
+                            </div>
+                        </div>
+                        <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                            style="transition-delay: 500ms;">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="./assets/img/bridesmaid/karen.png" alt="Bridesmaid"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
+                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
+                                <h3 class="text-white text-3xl font-serif">Karen Avila</h3>
                             </div>
                         </div>
 
@@ -251,6 +214,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- grooms -->
+        <div class="relative min-h-[500px] md:min-h-[550px] lg:min-h-[600px] mt-12">
 
             <div id="grid-groomsmen"
                 class="transition-all duration-500 opacity-0 pointer-events-none absolute w-full top-0 left-0">
@@ -277,8 +244,45 @@
                         <div
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="./assets/img/grooms/Robert.png"
-                                    alt="Best Man"
+                                <img src="./assets/img/grooms/Deither.png" alt="Groomsman"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
+                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsmen</p>
+                                <h3 class="text-white text-3xl font-serif">Deither Mantilla</h3>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="./assets/img/grooms/joel.jfif" alt="Groomsman"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
+                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsmen</p>
+                                <h3 class="text-white text-3xl font-serif">Joel Amiler</h3>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="./assets/img/grooms/Jericho.jpeg" alt="Groomsman"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
+                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsmen</p>
+                                <h3 class="text-white text-3xl font-serif">Jericho Cruz</h3>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="./assets/img/grooms/Robert.PNG" alt="Best Man"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
@@ -291,8 +295,7 @@
                         <div
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="./assets/img/grooms/yuri.png"
-                                    alt="Groomsman"
+                                <img src="./assets/img/grooms/yuri.png" alt="Groomsman"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
@@ -305,8 +308,7 @@
                         <div
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="./assets/img/grooms/Aci.png"
-                                    alt="Groomsman"
+                                <img src="./assets/img/grooms/Aci.png" alt="Groomsman"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
@@ -316,12 +318,10 @@
                             </div>
                         </div>
 
-                        <!-- Groomsman 4 -->
                         <div
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="./assets/img/grooms/Paolo.jpg"
-                                    alt="Groomsman"
+                                <img src="./assets/img/grooms/Paolo.jpg" alt="Groomsman"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
@@ -331,25 +331,12 @@
                             </div>
                         </div>
 
-                        <div
-                            class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
-                            <div class="aspect-[3/4] overflow-hidden">
-                                <img src="./assets/img/grooms/Deither.png"
-                                    alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
-                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsmen</p>
-                                <h3 class="text-white text-3xl font-serif">Deither Madera</h3>
-                            </div>
-                        </div>
+
 
                         <div
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="./assets/img/grooms/toper.png"
-                                    alt="Groomsman"
+                                <img src="./assets/img/grooms/toper.png" alt="Groomsman"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
@@ -362,14 +349,13 @@
                         <div
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=800&q=80"
-                                    alt="Groomsman"
+                                <img src="./assets/img/grooms/miks.jfif" alt="Groomsman"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsmen</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Micko Villanueva</h3>
                             </div>
                         </div>
 
@@ -377,47 +363,17 @@
                         <div
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=800&q=80"
-                                    alt="Groomsman"
+                                <img src="./assets/img/grooms/ken.png" alt="Groomsman"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsmen</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Ken Atanacio</h3>
                             </div>
                         </div>
 
-                        <!-- Groomsman 9 -->
-                        <div
-                            class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
-                            <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
-                                    alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
-                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsmen</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
-                            </div>
-                        </div>
-
-                        <!-- Groomsman 10 -->
-                        <div
-                            class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
-                            <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
-                                    alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
-                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsmen</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
-                            </div>
-                        </div>
-
+                        
                         <!-- Groomsman 11 -->
                         <div
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">

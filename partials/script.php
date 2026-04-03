@@ -134,31 +134,8 @@
     const btnGroomsmen = document.getElementById('btn-groomsmen');
     const gridBridesmaids = document.getElementById('grid-bridesmaids');
     const gridGroomsmen = document.getElementById('grid-groomsmen');
-
-    function switchTab(tab) {
-
-        if (tab === 'bridesmaids') {
-            btnBridesmaids.classList.add('bg-ocean-800', 'text-white', 'shadow-md');
-            btnBridesmaids.classList.remove('text-ocean-600', 'hover:text-ocean-900');
-            btnGroomsmen.classList.remove('bg-ocean-800', 'text-white', 'shadow-md');
-            btnGroomsmen.classList.add('text-ocean-600', 'hover:text-ocean-900');
-
-            gridBridesmaids.style.display = "block"
-            gridGroomsmen.classList.add('opacity-0', 'pointer-events-none');
-        } else {
-
-            btnGroomsmen.classList.add('bg-ocean-800', 'text-white', 'shadow-md');
-            btnGroomsmen.classList.remove('text-ocean-600', 'hover:text-ocean-900');
-            btnBridesmaids.classList.remove('bg-ocean-800', 'text-white', 'shadow-md');
-            btnBridesmaids.classList.add('text-ocean-600', 'hover:text-ocean-900');
-
-            gridGroomsmen.classList.remove('opacity-0', 'pointer-events-none');
-            gridBridesmaids.style.display = "none"
-        }
-    }
-
-    btnBridesmaids.addEventListener('click', () => switchTab('bridesmaids'));
-    btnGroomsmen.addEventListener('click', () => switchTab('groomsmen'));
+    
+    gridGroomsmen.classList.remove('opacity-0', 'pointer-events-none');
 
     const observerOptions = {
         threshold: 0.15,

@@ -161,7 +161,7 @@
                 data-aos-easing="ease-in-out">
                         <span
                             class="block  text-ocean-900 font-medium group-hover:text-ocean-600 transition-colors wedding-font"
-                            style="font-size: 2rem;">Mrs. Lorena Fernandez</span>
+                            style="font-size: 2rem;">Ms. Lorena Fernandez</span>
                         <span class="text-sm text-ocean-500 uppercase tracking-wider font-serif">Friend of the Groom</span>
                     </li>
                 </ul>
