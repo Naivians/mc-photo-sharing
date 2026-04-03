@@ -1,4 +1,4 @@
-<section id="party" class="py-24 px-6 lg:px-20 bg-pearl relative">
+<section id="party" class="py-24 px-6 lg:px-20 bg-ocean-50 relative">
 
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-20 " data-aos="fade-up">
@@ -35,15 +35,12 @@
             </div>
         </div>
 
-       
-
         <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
             data-aos-easing="ease-in-out">
             <h2 class="text-5xl md:text-6xl font-serif text-ocean-900 mt-2 mb-6">Bridesmaids & Groomsmen</h2>
             <div class="w-24 h-1 bg-ocean-200 mx-auto"></div>
         </div>
 
-        <!-- brides -->
         <div class="relative min-h-[500px] md:min-h-[550px] lg:min-h-[600px] mt-12">
             <div id="grid-bridesmaids" class="transition-all duration-500 opacity-100 absolute w-full top-0 left-0"
                 data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
@@ -70,7 +67,7 @@
                             style="transition-delay: 50ms;">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/bridesmaid/vence.png" alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -83,7 +80,7 @@
                             style="transition-delay: 100ms;">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/bridesmaid/barbs.png" alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -93,23 +90,10 @@
                         </div>
 
                         <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
-                            style="transition-delay: 150ms;">
-                            <div class="aspect-[3/4] overflow-hidden">
-                                <img src="./assets/img/bridesmaid/grasya.png" alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
-                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
-                                <h3 class="text-white text-3xl font-serif">Grasya Zapanta</h3>
-                            </div>
-                        </div>
-
-                        <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
                             style="transition-delay: 200ms;">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/bridesmaid/joan.png" alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -119,10 +103,25 @@
                         </div>
 
                         <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
+                            style="transition-delay: 150ms;">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="./assets/img/bridesmaid/grasya.png" alt="Bridesmaid"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
+                                <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmain</p>
+                                <h3 class="text-white text-3xl font-serif">Grasya Zapanta</h3>
+                            </div>
+                        </div>
+
+
+
+                        <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center reveal"
                             style="transition-delay: 200ms;">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/bridesmaid/hann.png" alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -135,7 +134,7 @@
                             style="transition-delay: 250ms;">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/bridesmaid/anna.png" alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -148,7 +147,7 @@
                             style="transition-delay: 350ms;">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/bridesmaid/hazel.png" alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -161,7 +160,7 @@
                             style="transition-delay: 400ms;">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/bridesmaid/jen.png" alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -174,7 +173,7 @@
                             style="transition-delay: 450ms;">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/bridesmaid/michelle.png" alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -187,7 +186,7 @@
                             style="transition-delay: 500ms;">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/bridesmaid/rhia.png" alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -199,7 +198,7 @@
                             style="transition-delay: 500ms;">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/bridesmaid/karen.png" alt="Bridesmaid"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -216,7 +215,6 @@
             </div>
         </div>
 
-        <!-- grooms -->
         <div class="relative min-h-[500px] md:min-h-[550px] lg:min-h-[600px] mt-12">
 
             <div id="grid-groomsmen"
@@ -245,7 +243,7 @@
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/grooms/Deither.png" alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -257,7 +255,7 @@
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/grooms/joel.jfif" alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -270,7 +268,7 @@
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/grooms/Jericho.jpeg" alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -283,7 +281,7 @@
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/grooms/Robert.PNG" alt="Best Man"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -296,7 +294,7 @@
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/grooms/yuri.png" alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -309,7 +307,7 @@
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/grooms/Aci.png" alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -322,7 +320,7 @@
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/grooms/Paolo.jpg" alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -337,7 +335,7 @@
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/grooms/toper.png" alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -350,7 +348,7 @@
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/grooms/miks.jfif" alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -364,7 +362,7 @@
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="./assets/img/grooms/ken.png" alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
@@ -373,19 +371,18 @@
                             </div>
                         </div>
 
-                        
-                        <!-- Groomsman 11 -->
+
                         <div
                             class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
                             <div class="aspect-[3/4] overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=800&q=80"
                                     alt="Groomsman"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ">
                             </div>
                             <div
                                 class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ocean-900/95 to-transparent">
                                 <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsmen</p>
-                                <h3 class="text-white text-3xl font-serif">Beamay Nonoy</h3>
+                                <h3 class="text-white text-3xl font-serif">Prince Aquilan</h3>
                             </div>
                         </div>
 

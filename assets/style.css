@@ -177,6 +177,12 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+iframe{
+  width: 100%;
 }
 
 .timelineBackround {
@@ -198,11 +204,6 @@ body {
   transform: translateY(40px);
   transition: 1s ease;
 }
-
-/* .timeline-item.show {
-  opacity: 1;
-  transform: translateY(0);
-} */
 
 .timeline-item:nth-child(odd) {
   left: 0;

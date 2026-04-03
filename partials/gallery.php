@@ -34,7 +34,8 @@
                 data-filter="reception">Reception</button>
         </div>
 
-        <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6" id="gallery-grid">
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6" id="gallery-grid" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000"
+                data-aos-easing="ease-in-out">
 
             <div class="gallery-item group relative overflow-hidden rounded-2xl break-inside-avoid cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500"
                 data-category="portraits" onclick="openLightbox(0)">
@@ -200,7 +201,6 @@
         </div>
     </div>
 
-    <!-- Lightbox Modal -->
     <div id="lightbox"
         class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
         <button onclick="closeLightbox()"
@@ -224,7 +224,7 @@
             </svg>
         </button>
 
-        <div class="max-w-5xl max-h-[90vh] relative">
+        <div class="max-w-5xl max-h-[90vh] relative" >
             <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl">
             <div
                 class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
@@ -292,12 +292,11 @@
 
         let currentIndex = 0;
 
-        // Filter Functionality
         function filterGallery(category) {
             const items = document.querySelectorAll('.gallery-item');
             const buttons = document.querySelectorAll('.filter-btn');
 
-            // Update button states
+        
             buttons.forEach(btn => {
                 if (btn.dataset.filter === category) {
                     btn.classList.add('active');
@@ -310,7 +309,7 @@
                 }
             });
 
-            // Filter items with animation
+            
             items.forEach((item, index) => {
                 if (category === 'all' || item.dataset.category === category) {
                     item.style.display = 'block';
@@ -328,7 +327,7 @@
             });
         }
 
-        // Lightbox Functions
+  
         function openLightbox(index) {
             currentIndex = index;
             const lightbox = document.getElementById('lightbox');
@@ -340,7 +339,7 @@
             lightbox.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
 
-            // Animate in
+        
             setTimeout(() => {
                 lightbox.style.opacity = '1';
             }, 10);
@@ -377,7 +376,7 @@
             }, 200);
         }
 
-        // Keyboard Navigation
+      
         document.addEventListener('keydown', (e) => {
             if (document.getElementById('lightbox').classList.contains('hidden')) return;
 
@@ -386,12 +385,12 @@
             if (e.key === 'ArrowLeft') prevImage();
         });
 
-        // Close on background click
+       
         document.getElementById('lightbox').addEventListener('click', (e) => {
             if (e.target === e.currentTarget) closeLightbox();
         });
 
-        // Initialize
+ 
         document.addEventListener('DOMContentLoaded', () => {
             filterGallery('all');
         });

@@ -1,4 +1,4 @@
-<section id="sponsors" class="py-24 bg-ocean-50 relative overflow-hidden">
+<section id="sponsors" class="py-24 bg-pearl relative overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div
             class="absolute -top-20 -right-20 w-96 h-96 bg-ocean-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70">

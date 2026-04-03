@@ -18,6 +18,8 @@
 
             <a href="#sponsors"
                 class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Sponsors</a>
+            <a href="#location"
+                class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Location</a>
             <a href="./uploader.php"
                 class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Gallery</a>
             <?php
@@ -44,6 +46,7 @@
             Party</a>
 
         <a href="#sponsors" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Sponsors</a>
+        <a href="#location" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Location</a>
         <a href="./uploader.php"
             class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Gallery</a>
         <?php
