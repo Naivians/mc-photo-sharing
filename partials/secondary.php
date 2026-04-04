@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
+        <div class="text-center my-12" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
             data-aos-easing="ease-in-out">
             <h2 class="text-5xl md:text-6xl font-serif text-ocean-900 mt-2 mb-6">Bridesmaids & Groomsmen</h2>
             <div class="w-24 h-1 bg-ocean-200 mx-auto"></div>

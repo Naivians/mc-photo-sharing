@@ -412,7 +412,6 @@ $uploadBtn = isset(getDisableUploadBtn()['isEnable']) && getDisableUploadBtn()['
         async function loadGallery() {
 
             galleryGrid.innerHTML = "";
-            document.getElementById("loadingSpinner").style.display = "block";
 
             try {
 
@@ -467,7 +466,7 @@ $uploadBtn = isset(getDisableUploadBtn()['isEnable']) && getDisableUploadBtn()['
                 applyFilter(currentFilter);
 
             } catch (err) {
-                showToast("Gallery load failed");
+                showToast("Be the first to upload a photo or video!");
             }
 
         }

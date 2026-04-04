@@ -1,4 +1,4 @@
-<?php $scriptName = basename($_SERVER['SCRIPT_NAME']) ?? '';?>
+<?php $scriptName = basename($_SERVER['SCRIPT_NAME']) ?? ''; ?>
 
 <nav class="fixed w-full z-50 transition-all duration-300 py-6 px-6 lg:px-12 flex justify-between items-center"
     id="navbar">
@@ -7,11 +7,11 @@
     <div class="hidden md:flex space-x-8 items-center">
         <?php
         if ($scriptName == 'uploader.php') {
-            ?>
+        ?>
             <a href="index.php" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Home</a>
-            <?php
+        <?php
         } else {
-            ?>
+        ?>
             <a href="#home" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Home</a>
             <a href="#party" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">The
                 Party</a>
@@ -22,7 +22,7 @@
                 class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Location</a>
             <a href="./uploader.php"
                 class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Gallery</a>
-            <?php
+        <?php
         }
         ?>
     </div>
@@ -36,28 +36,29 @@
     class="fixed inset-0 bg-pearl z-40 transform translate-x-full transition-transform duration-500 flex flex-col justify-center items-center space-y-8">
     <?php
     if ($scriptName == 'uploader.php') {
-        ?>
+    ?>
         <a href="index.php" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Home</a>
-        <?php
+    <?php
     } else {
-        ?>
-        <a href="#home" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Home</a>
-        <a href="#party" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">The
+    ?>
+        <a href="#home" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors mobile-link">Home</a>
+        <a href="#party" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors mobile-link">The
             Party</a>
 
-        <a href="#sponsors" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Sponsors</a>
-        <a href="#location" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Location</a>
+        <a href="#sponsors" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors mobile-link">Sponsors</a>
+        <a href="#location" class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors mobile-link">Location</a>
         <a href="./uploader.php"
             class="text-sm uppercase tracking-widest hover:text-ocean-500 transition-colors">Gallery</a>
-        <?php
+    <?php
     }
     ?>
 </div>
 
 
 <script>
-
+    const linkIds = ['home', 'party', 'sponsors', 'location'];
     const navbar = document.getElementById('navbar');
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('bg-white/80', 'backdrop-blur-md', 'shadow-sm', 'py-4');
@@ -71,25 +72,18 @@
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
-    let isMenuOpen = false;
 
     mobileBtn.addEventListener('click', () => {
-        isMenuOpen = !isMenuOpen;
-        if (isMenuOpen) {
-            mobileMenu.classList.remove('translate-x-full');
-            document.body.style.overflow = 'hidden';
-        } else {
-            mobileMenu.classList.add('translate-x-full');
-            document.body.style.overflow = 'auto';
-        }
+        const isOpen = mobileMenu.classList.toggle('translate-x-full');
+        document.body.style.overflow = isOpen ? 'auto' : 'hidden';
     });
 
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
-            isMenuOpen = false;
-            mobileMenu.classList.add('translate-x-full');
-            document.body.style.overflow = 'auto';
+            setTimeout(() => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = 'auto';
+            }, 500);
         });
     });
-
 </script>
