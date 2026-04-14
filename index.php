@@ -9,7 +9,7 @@
     <?php include "./partials/nav.php"; ?>
     <?php include "./partials/hero.php"; ?>
     <?php include "./partials/timeline.php"; ?>
-    <?php include "./partials/gallery.php"; ?>
+    <!-- gallery to be filled  -->
     <?php include "./partials/clock.php"; ?>
     <?php include "./partials/secondary.php"; ?>
     <?php include "./partials/principal.php"; ?>

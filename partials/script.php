@@ -1,11 +1,153 @@
 <script>
+    const bridesmaids = [{
+            name: "Vence Telebrico",
+            img: "vence.png"
+        },
+        {
+            name: "Barbie Austria",
+            img: "barbs.png"
+        },
+        {
+            name: "Joan Madera",
+            img: "joan.png"
+        },
+        {
+            name: "Grasya Zapanta",
+            img: "grasya.png"
+        },
+        {
+            name: "Johana Amiler",
+            img: "hann.png"
+        },
+        {
+            name: "Anna Al Dave",
+            img: "anna.png"
+        },
+        {
+            name: "Hazel Villanueva",
+            img: "hazel.png"
+        },
+        {
+            name: "Jennelyn Albarico",
+            img: "jen.png"
+        },
+        {
+            name: "Michelle Justiniano",
+            img: "michelle.png"
+        },
+        {
+            name: "Rhia Mae Madera",
+            img: "rhia.png"
+        },
+        {
+            name: "Karen Avila",
+            img: "karen.png"
+        }
+    ];
+
+    const groomsmen = [{
+            name: "Deither Mantilla",
+            img: "Deither.png"
+        },
+        {
+            name: "Joel Amiler",
+            img: "joel.jfif"
+        },
+        {
+            name: "Jericho Cruz",
+            img: "Jericho.jpeg"
+        },
+        {
+            name: "Robert Rances Madera",
+            img: "Robert.PNG"
+        },
+        {
+            name: "Johnrey Madera",
+            img: "yuri.png"
+        },
+        {
+            name: "Aci Madera",
+            img: "Aci.png"
+        },
+        {
+            name: "John Paolo Madera Manuel",
+            img: "Paolo.jpg"
+        },
+        {
+            name: "Christopher Guinoo",
+            img: "toper.png"
+        },
+        {
+            name: "Micko Villanueva",
+            img: "miks.jfif"
+        },
+        {
+            name: "Ken Atanacio",
+            img: "ken.png"
+        },
+        {
+            name: "Prince Aquilan",
+            img: "kulot.png"
+        }
+    ];
+
+    const bridesCOntainer = document.getElementById("bridesmaids-track");
+    const groomsmenContainer = document.getElementById("groomsmen-track");
+
+    function createBrideCard(person) {
+        return `
+    <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+      
+      <div class="aspect-[3/4] overflow-hidden">
+        <img 
+          src="./assets/img/bridesmaid/${person.img}" 
+          loading="lazy"
+          decoding="async"
+          alt="Bridesmaid"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      </div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-ocean-900/90 to-transparent">
+        <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Bridesmaid</p>
+        <h3 class="text-white text-2xl font-serif">${person.name}</h3>
+      </div>
+
+    </div>
+  `;
+    }
+
+    function createGroomCard(person) {
+        return `
+    <div class="group relative overflow-hidden rounded-2xl cursor-pointer flex-shrink-0 w-[280px] md:w-[300px] lg:w-[320px] snap-center">
+      
+      <div class="aspect-[3/4] overflow-hidden">
+        <img 
+          src="./assets/img/grooms/${person.img}" 
+          loading="lazy"
+          decoding="async"
+          alt="grooms"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      </div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-ocean-900/90 to-transparent">
+        <p class="text-ocean-200 text-xs uppercase tracking-widest mb-1">Groomsmen</p>
+        <h3 class="text-white text-2xl font-serif">${person.name}</h3>
+      </div>
+
+    </div>
+  `;
+    }
+
+    bridesCOntainer.innerHTML = bridesmaids.map(createBrideCard).join("");
+    groomsmenContainer.innerHTML = groomsmen.map(createGroomCard).join("");
+
     const playBtn = document.querySelector(".play-btn")
     const StopSong = document.getElementById("playBtn");
     const timeline = document.getElementById("timelineContent")
     const items = document.querySelectorAll(".timeline-item")
     const song = document.getElementById("weddingSong")
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener("scroll", function() {
         if (window.scrollY > 1000) {
             StopSong.classList.add("show");
         } else {
@@ -43,8 +185,6 @@
         }
     })
 
-
-
     const weddingDate = new Date("May 09, 2026 00:00:00").getTime();
 
     function updateCountdown() {
@@ -74,14 +214,20 @@
     function scrollBridesmaids(direction) {
         const track = document.getElementById('bridesmaids-track');
         const cardWidth = track.querySelector('div').offsetWidth + 24; // card width + gap
-        track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+        track.scrollBy({
+            left: direction * cardWidth,
+            behavior: 'smooth'
+        });
         updateDots('bridesmaids');
     }
 
     function scrollGroomsmen(direction) {
         const track = document.getElementById('groomsmen-track');
         const cardWidth = track.querySelector('div').offsetWidth + 24;
-        track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+        track.scrollBy({
+            left: direction * cardWidth,
+            behavior: 'smooth'
+        });
         updateDots('groomsmen');
     }
 
@@ -98,7 +244,10 @@
             dot.className = `w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-ocean-600 w-6' : 'bg-ocean-300'}`;
             dot.onclick = () => {
                 const cardWidth = track.querySelector('div').offsetWidth + 24;
-                track.scrollTo({ left: i * cardWidth * visibleCards, behavior: 'smooth' });
+                track.scrollTo({
+                    left: i * cardWidth * visibleCards,
+                    behavior: 'smooth'
+                });
             };
             container.appendChild(dot);
         }
@@ -134,7 +283,7 @@
     const btnGroomsmen = document.getElementById('btn-groomsmen');
     const gridBridesmaids = document.getElementById('grid-bridesmaids');
     const gridGroomsmen = document.getElementById('grid-groomsmen');
-    
+
     gridGroomsmen.classList.remove('opacity-0', 'pointer-events-none');
 
     const observerOptions = {
@@ -146,14 +295,10 @@
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Only animate once
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
-
-    document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
-    });
 
     const modal = document.getElementById('success-modal');
     const modalContent = document.getElementById('modal-content');
@@ -166,5 +311,4 @@
             heroBg.style.transform = `scale(1.1) translateY(${scrolled * 0.5}px)`;
         }
     });
-
 </script>
